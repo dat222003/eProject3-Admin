@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ABCD_Admin.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.totalPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isConfirm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.isPurchased)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bookingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.fullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaymentMethod.paymentName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isConfirm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.isPurchased)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bookingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.userName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.fullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaymentMethod.paymentName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.orderId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.orderId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.orderId })
+        </td>
+    </tr>
+}
+
+</table>

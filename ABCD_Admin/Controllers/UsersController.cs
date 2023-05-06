@@ -30,8 +30,7 @@ namespace ABCD_Admin.Controllers
             {
                 Session["employeeId"] = userData.Employee.employeeId;
                 Session["fullName"] = userData.Employee.fullName;
-                return Content(userData.userName);
-                //return RedirectToAction("Index", "Orders");
+                return RedirectToAction("Index", "Orders");
             }
 
             ModelState.AddModelError("", "Invalid login credentials.");

@@ -1,0 +1,89 @@
+﻿@model ABCD_Admin.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.totalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isConfirm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isConfirm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPurchased)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPurchased)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.bookingDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bookingDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.userName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.userName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.fullName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.fullName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentMethod.paymentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentMethod.paymentName)
+        </dd>
+    </dl>
+    <h5 style="background-color: #f2f2f2;">Order Details</h5>
+    <table style="border-collapse: collapse; width: 100%;">
+        <tr style="background-color: #f2f2f2; border: 1px solid #ddd;">
+            <th style="padding: 10px; text-align: left;">Ticket ID</th>
+            <th style="padding: 10px; text-align: left;">Ticket Price</th>
+        </tr>
+        @foreach (var od in ViewBag.OrderDetails)
+        {
+            <tr style="border: 1px solid #ddd;">
+                <td style="padding: 10px;">@od.ticketId</td>
+                <td style="padding: 10px;">@od.ticketPrice</td>
+            </tr>
+        }
+    </table>
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.orderId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

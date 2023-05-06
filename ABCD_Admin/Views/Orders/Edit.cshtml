@@ -1,0 +1,100 @@
+﻿@model ABCD_Admin.Models.Order
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Order</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.orderId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.customerId, "customerId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" class="form-control" readonly value="@Model.customerId" />
+            </div>
+        </div>
+
+        @Html.HiddenFor(model => model.employeeId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.totalPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" class="form-control" readonly value="@Model.totalPrice" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.isConfirm, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @if (Model.isPurchased)
+                    {
+                        @Html.EditorFor(model => model.isConfirm)
+                        @Html.ValidationMessageFor(model => model.isConfirm, "", new { @class = "text-danger" })
+                    }
+                    else
+                    {
+                        @Html.EditorFor(model => model.isConfirm, new { htmlAttributes = new { @disabled = "disabled" } })
+                        @Html.ValidationMessageFor(model => model.isConfirm, "", new { @class = "text-danger" })
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.isPurchased, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.isPurchased)
+                    @Html.ValidationMessageFor(model => model.isPurchased, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.bookingDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <input type="text" class="form-control" readonly value="@Model.bookingDate" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    var isPurchasedCheckbox = document.querySelector('input[name="isPurchased"]');
+    var isConfirmCheckbox = document.querySelector('input[name="isConfirm"]');
+
+    if (!isPurchasedCheckbox.checked) {
+        isConfirmCheckbox.disabled = true;
+    }
+
+    // Listen for changes in isPurchased checkbox and update the isConfirm checkbox accordingly
+    isPurchasedCheckbox.addEventListener('change', function () {
+        if (isPurchasedCheckbox.checked) {
+            isConfirmCheckbox.disabled = false;
+        } else {
+            isConfirmCheckbox.checked = false;
+            isConfirmCheckbox.disabled = true;
+        }
+    });
+</script>
