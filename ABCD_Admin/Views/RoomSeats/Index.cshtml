@@ -1,0 +1,43 @@
+﻿@model IEnumerable<ABCD_Admin.Models.RoomSeat>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.isAvailable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room.roomId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Seat.seatName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.isAvailable)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room.roomId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Seat.seatName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { roomId = item.Room.roomId, seatId = item.Seat.seatId }) |
+            @Html.ActionLink("Details", "Details", new { roomId = item.Room.roomId, seatId = item.Seat.seatId }) |
+        </td>
+    </tr>
+}
+
+</table>
