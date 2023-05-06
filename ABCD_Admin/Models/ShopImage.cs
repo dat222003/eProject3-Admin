@@ -11,19 +11,13 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
-    public partial class UserFunction
-    {
-        [DisplayName("Users")]
-        public int userId { get; set; }
-        [DisplayName("Function")]
-        public int functionId { get; set; }
-        [DisplayName("Group")]
-        public Nullable<int> groupId { get; set; }
     
-        public virtual Function Function { get; set; }
-        public virtual Group Group { get; set; }
-        public virtual User User { get; set; }
+    public partial class ShopImage
+    {
+        public int id { get; set; }
+        public int shopId { get; set; }
+        public string imagePath { get; set; }
+    
+        public virtual Shop Shop { get; set; }
     }
 }

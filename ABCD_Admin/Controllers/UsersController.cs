@@ -22,18 +22,22 @@ namespace ABCD_Admin.Controllers
         [HttpPost]
         public ActionResult Login(User user)
         {
-            var employeeInDatabase = db.Employees.Include(e => e.User).FirstOrDefault(e => e.User.userName == user.userName && e.User.password == user.password);
+            var userData = db.Users
+                .Include(u => u.Employee)
+                .FirstOrDefault(u => u.userName == user.userName && u.password == user.password);
 
-            if (employeeInDatabase != null)
+            if (userData != null)
             {
-                Session["employeeId"] = employeeInDatabase.employeeId;
-                Session["employeeName"] = employeeInDatabase.User.userName;
-                return RedirectToAction("Index", "Orders");
+                Session["employeeId"] = userData.Employee.employeeId;
+                Session["fullName"] = userData.Employee.fullName;
+                return Content(userData.userName);
+                //return RedirectToAction("Index", "Orders");
             }
 
             ModelState.AddModelError("", "Invalid login credentials.");
             return View(user);
         }
+
 
         public ActionResult Logout()
         {
@@ -42,12 +46,11 @@ namespace ABCD_Admin.Controllers
             return RedirectToAction("Login", "Users");
         }
 
-
-
         // GET: Users
         public ActionResult Index()
         {
-            return View(db.Users.ToList());
+            var users = db.Users.Include(u => u.Employee);
+            return View(users.ToList());
         }
 
         // GET: Users/Details/5
@@ -68,6 +71,7 @@ namespace ABCD_Admin.Controllers
         // GET: Users/Create
         public ActionResult Create()
         {
+            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "email");
             return View();
         }
 
@@ -76,7 +80,7 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "userId,userName,password,email")] User user)
+        public ActionResult Create([Bind(Include = "userId,userName,password,employeeId")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -85,6 +89,7 @@ namespace ABCD_Admin.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "email", user.employeeId);
             return View(user);
         }
 
@@ -100,6 +105,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "email", user.employeeId);
             return View(user);
         }
 
@@ -108,7 +114,7 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "userId,userName,password,email")] User user)
+        public ActionResult Edit([Bind(Include = "userId,userName,password,employeeId")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -116,6 +122,7 @@ namespace ABCD_Admin.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "email", user.employeeId);
             return View(user);
         }
 

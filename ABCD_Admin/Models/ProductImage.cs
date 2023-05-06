@@ -12,15 +12,12 @@ namespace ABCD_Admin.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Feedback
+    public partial class ProductImage
     {
         public int id { get; set; }
-        public int customerId { get; set; }
-        public int shopId { get; set; }
-        public string message { get; set; }
-        public System.DateTime feedbackDate { get; set; }
+        public int productId { get; set; }
+        public string imagePath { get; set; }
     
-        public virtual Customer Customer { get; set; }
-        public virtual Shop Shop { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

@@ -11,23 +11,24 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class Employee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Employee()
         {
             this.Orders = new HashSet<Order>();
+            this.Users = new HashSet<User>();
         }
-
-        [DisplayName("Employee")]
-        public int employeeId { get; set; }
-        [DisplayName("User")]
-        public int userId { get; set; }
     
-        public virtual User User { get; set; }
+        public int employeeId { get; set; }
+        public string email { get; set; }
+        public string fullName { get; set; }
+        public System.DateTime birthDate { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> Users { get; set; }
     }
 }

@@ -129,93 +129,82 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\CustomersController.cs" />
-    <Compile Include="Controllers\EmployeesController.cs" />
-    <Compile Include="Controllers\FeedbacksController.cs" />
-    <Compile Include="Controllers\FunctionsController.cs" />
-    <Compile Include="Controllers\GalleriesController.cs" />
-    <Compile Include="Controllers\GroupsController.cs" />
-    <Compile Include="Controllers\MoviesController.cs" />
-    <Compile Include="Controllers\OrdersController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
-    <Compile Include="Controllers\RoomsController.cs" />
-    <Compile Include="Controllers\RoomSeatsController.cs" />
-    <Compile Include="Controllers\ScreeningsController.cs" />
-    <Compile Include="Controllers\SeatsController.cs" />
-    <Compile Include="Controllers\ShopsController.cs" />
-    <Compile Include="Controllers\TicketsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ABCD-Admin.Context.cs">
+    <Compile Include="Models\ABCD-Mall.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ABCD-Admin.Context.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ABCD-Admin.cs">
+    <Compile Include="Models\ABCD-Mall.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ABCD-Admin.Designer.cs">
+    <Compile Include="Models\ABCD-Mall.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ABCD-Admin.edmx</DependentUpon>
+      <DependentUpon>ABCD-Mall.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Customer.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Feedback.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Function.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Gallery.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Group.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Movy.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Order.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\OrderDetail.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PaymentMethod.cs">
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Product.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProductImage.cs">
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Room.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\RoomSeat.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Screening.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Seat.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Shop.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ShopImage.cs">
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Ticket.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\User.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserFunction.cs">
-      <DependentUpon>ABCD-Admin.tt</DependentUpon>
+      <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -285,15 +274,15 @@
     <Content Include="js\main.js" />
     <Content Include="js\moment.js" />
     <Content Include="media\9606031aabebde32fa96edeff071a132.jpg" />
-    <Content Include="Models\ABCD-Admin.Context.tt">
+    <Content Include="Models\ABCD-Mall.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ABCD-Admin.edmx</DependentUpon>
-      <LastGenOutput>ABCD-Admin.Context.cs</LastGenOutput>
+      <DependentUpon>ABCD-Mall.edmx</DependentUpon>
+      <LastGenOutput>ABCD-Mall.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\ABCD-Admin.tt">
+    <Content Include="Models\ABCD-Mall.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ABCD-Admin.edmx</DependentUpon>
-      <LastGenOutput>ABCD-Admin.cs</LastGenOutput>
+      <DependentUpon>ABCD-Mall.edmx</DependentUpon>
+      <LastGenOutput>ABCD-Mall.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\animsition\animsition.min.css" />
     <Content Include="Scripts\animsition\animsition.min.js" />
@@ -465,12 +454,12 @@
     <Content Include="fonts\poppins\poppins-v5-latin-regular.ttf" />
     <Content Include="fonts\poppins\poppins-v5-latin-regular.woff" />
     <Content Include="fonts\poppins\poppins-v5-latin-regular.woff2" />
-    <EntityDeploy Include="Models\ABCD-Admin.edmx">
+    <EntityDeploy Include="Models\ABCD-Mall.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ABCD-Admin.Designer.cs</LastGenOutput>
+      <LastGenOutput>ABCD-Mall.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\ABCD-Admin.edmx.diagram">
-      <DependentUpon>ABCD-Admin.edmx</DependentUpon>
+    <Content Include="Models\ABCD-Mall.edmx.diagram">
+      <DependentUpon>ABCD-Mall.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\chartjs\Chart.bundle.min.js" />
@@ -864,6 +853,14 @@
     <Content Include="vendor\slick\slick.less" />
     <Content Include="vendor\slick\slick.scss" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LayoutPage.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,8 +11,7 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class RoomSeat
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,12 +19,9 @@ namespace ABCD_Admin.Models
         {
             this.Tickets = new HashSet<Ticket>();
         }
-
-        [DisplayName("Room")]
+    
         public int roomId { get; set; }
-        [DisplayName("Seat")]
         public int seatId { get; set; }
-        [DisplayName("Is Available")]
         public bool isAvailable { get; set; }
     
         public virtual Room Room { get; set; }

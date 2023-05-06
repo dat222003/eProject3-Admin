@@ -11,33 +11,19 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
-    public partial class Gallery
+    
+    public partial class PaymentMethod
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Gallery()
+        public PaymentMethod()
         {
-            this.Feedbacks = new HashSet<Feedback>();
+            this.Orders = new HashSet<Order>();
         }
-
-        [DisplayName("Image")]
-        public int imageId { get; set; }
-        [DisplayName("Image Path")]
-        [Required]
-        public string imagePath { get; set; }
-        [DisplayName("Object Type")]
-        [Required]
-        public string objectType { get; set; }
-        [DisplayName("Object")]
-        [Required]
-        public int objectId { get; set; }
     
-        public virtual Movy Movy { get; set; }
-        public virtual Product Product { get; set; }
-        public virtual Shop Shop { get; set; }
+        public int paymentId { get; set; }
+        public string paymentName { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Feedback> Feedbacks { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

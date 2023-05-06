@@ -11,44 +11,23 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Movy
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Movy()
         {
-            this.Galleries = new HashSet<Gallery>();
             this.Screenings = new HashSet<Screening>();
             this.Tickets = new HashSet<Ticket>();
         }
-
-        [DisplayName("Movie")]
+    
         public int movieId { get; set; }
-        [Required]
-        [DisplayName("Movie Title")]
         public string movieTitle { get; set; }
-        [Required]
-        [DisplayName("Movie Description")]
         public string movieDescription { get; set; }
-        [Required]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}", ApplyFormatInEditMode = true)]
-        [DisplayName("Release Date")]
         public System.DateTime releaseDate { get; set; }
-        [Required]
-        [DisplayName("Duration")]
         public int duration { get; set; }
-        [Required]
-        [Range(0, 143, ErrorMessage = "The number of available seats must be between 0 and 143.")]
-        [DisplayName("Seats Available")]
-        public int seatsAvailable { get; set; }
-        [Required]
-        [DisplayName("Status")]
         public byte status { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Gallery> Galleries { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Screening> Screenings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

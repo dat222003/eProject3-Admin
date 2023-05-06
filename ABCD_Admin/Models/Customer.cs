@@ -11,8 +11,7 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,15 +21,15 @@ namespace ABCD_Admin.Models
             this.Orders = new HashSet<Order>();
             this.Tickets = new HashSet<Ticket>();
         }
-
-        [DisplayName("Customer")]
-        public int customerId { get; set; }
-        [DisplayName("Card Number")]
-        public string cardNumber { get; set; }
-        [DisplayName("User")]
-        public int userId { get; set; }
     
-        public virtual User User { get; set; }
+        public int customerId { get; set; }
+        public string userName { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public string fullName { get; set; }
+        public System.DateTime birthDate { get; set; }
+        public string cardNumber { get; set; }
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

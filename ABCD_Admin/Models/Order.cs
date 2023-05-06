@@ -11,8 +11,7 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,25 +19,20 @@ namespace ABCD_Admin.Models
         {
             this.OrderDetails = new HashSet<OrderDetail>();
         }
-
-        [DisplayName("Order")]
+    
         public int orderId { get; set; }
-        [DisplayName("Customer")]
         public int customerId { get; set; }
-        [DisplayName("Employee")]
         public Nullable<int> employeeId { get; set; }
-        [DisplayName("Total Price")]
+        public Nullable<int> paymentId { get; set; }
         public int totalPrice { get; set; }
-        [DisplayName("Confirm")]
         public bool isConfirm { get; set; }
-        [DisplayName("Purchased")]
         public bool isPurchased { get; set; }
-        [DisplayName("Booking")]
         public System.DateTime bookingDate { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+        public virtual PaymentMethod PaymentMethod { get; set; }
     }
 }

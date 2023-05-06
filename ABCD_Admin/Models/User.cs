@@ -11,31 +11,25 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
+    
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Customers = new HashSet<Customer>();
-            this.Employees = new HashSet<Employee>();
-            this.UserFunctions = new HashSet<UserFunction>();
+            this.Functions = new HashSet<Function>();
+            this.Groups = new HashSet<Group>();
         }
     
         public int userId { get; set; }
-        [DisplayName("User Name")]
         public string userName { get; set; }
-        [DisplayName("Password")]
         public string password { get; set; }
-        [DisplayName("Email")]
-        public string email { get; set; }
+        public int employeeId { get; set; }
     
+        public virtual Employee Employee { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Function> Functions { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Employee> Employees { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserFunction> UserFunctions { get; set; }
+        public virtual ICollection<Group> Groups { get; set; }
     }
 }

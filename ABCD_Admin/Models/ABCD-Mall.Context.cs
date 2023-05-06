@@ -29,18 +29,19 @@ namespace ABCD_Admin.Models
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Function> Functions { get; set; }
-        public virtual DbSet<Gallery> Galleries { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<Movy> Movies { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<PaymentMethod> PaymentMethods { get; set; }
+        public virtual DbSet<ProductImage> ProductImages { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Room> Rooms { get; set; }
         public virtual DbSet<RoomSeat> RoomSeats { get; set; }
         public virtual DbSet<Screening> Screenings { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
+        public virtual DbSet<ShopImage> ShopImages { get; set; }
         public virtual DbSet<Shop> Shops { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
-        public virtual DbSet<UserFunction> UserFunctions { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
     }

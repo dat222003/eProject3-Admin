@@ -11,36 +11,28 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Shop
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Shop()
         {
-            this.Galleries = new HashSet<Gallery>();
+            this.Feedbacks = new HashSet<Feedback>();
             this.Products = new HashSet<Product>();
+            this.ShopImages = new HashSet<ShopImage>();
         }
-
-        [DisplayName("Shop")]
+    
         public int shopId { get; set; }
-        [Required]
-        [DisplayName("Shop Name")]
         public string shopName { get; set; }
-        [Required]
-        [DisplayName("Shop Address")]
         public string shopAddress { get; set; }
-        [Required]
-        [DisplayName("PhoneNumber")]
         public string phoneNumber { get; set; }
-        [Required]
-        [DisplayName("Email")]
         public string email { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Gallery> Galleries { get; set; }
+        public virtual ICollection<Feedback> Feedbacks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ShopImage> ShopImages { get; set; }
     }
 }
