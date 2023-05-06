@@ -1,0 +1,1510 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Carts">
+          <Key>
+            <PropertyRef Name="customerId" />
+            <PropertyRef Name="ticketId" />
+          </Key>
+          <Property Name="customerId" Type="int" Nullable="false" />
+          <Property Name="ticketId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="customerId" />
+          </Key>
+          <Property Name="customerId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cardNumber" Type="varchar" MaxLength="16" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="employeeId" />
+          </Key>
+          <Property Name="employeeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Feedbacks">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerId" Type="int" Nullable="false" />
+          <Property Name="message" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
+          <Property Name="phoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Functions">
+          <Key>
+            <PropertyRef Name="functionId" />
+          </Key>
+          <Property Name="functionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="functionName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gallery">
+          <Key>
+            <PropertyRef Name="imageId" />
+          </Key>
+          <Property Name="imageId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="imagePath" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="objectType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="objectId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GalleryFeedbacks">
+          <Key>
+            <PropertyRef Name="galleryId" />
+            <PropertyRef Name="feedbackId" />
+          </Key>
+          <Property Name="galleryId" Type="int" Nullable="false" />
+          <Property Name="feedbackId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GroupFunctions">
+          <Key>
+            <PropertyRef Name="groupId" />
+            <PropertyRef Name="functionId" />
+          </Key>
+          <Property Name="groupId" Type="int" Nullable="false" />
+          <Property Name="functionId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="groupId" />
+          </Key>
+          <Property Name="groupId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="groupName" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Movies">
+          <Key>
+            <PropertyRef Name="movieId" />
+          </Key>
+          <Property Name="movieId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="movieTitle" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="movieDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="releaseDate" Type="datetime" Nullable="false" />
+          <Property Name="duration" Type="int" Nullable="false" />
+          <Property Name="seatsAvailable" Type="int" Nullable="false" />
+          <Property Name="status" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'ABCD - Mall.dbo.OrderDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="ticketId" />
+          </Key>
+          <Property Name="orderId" Type="int" />
+          <Property Name="ticketId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="orderId" />
+          </Key>
+          <Property Name="orderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="customerId" Type="int" Nullable="false" />
+          <Property Name="employeeId" Type="int" />
+          <Property Name="totalPrice" Type="int" Nullable="false" />
+          <Property Name="isConfirm" Type="bit" Nullable="false" />
+          <Property Name="isPurchased" Type="bit" Nullable="false" />
+          <Property Name="bookingDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Name="productId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="productName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="productDescription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="shopId" Type="int" Nullable="false" />
+          <Property Name="imagePath" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Rooms">
+          <Key>
+            <PropertyRef Name="roomId" />
+          </Key>
+          <Property Name="roomId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numberOfSeats" Type="int" Nullable="false" />
+          <Property Name="isAvailable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RoomSeats">
+          <Key>
+            <PropertyRef Name="roomId" />
+            <PropertyRef Name="seatId" />
+          </Key>
+          <Property Name="roomId" Type="int" Nullable="false" />
+          <Property Name="seatId" Type="int" Nullable="false" />
+          <Property Name="isAvailable" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Screening">
+          <Key>
+            <PropertyRef Name="screeningId" />
+          </Key>
+          <Property Name="screeningId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="movieId" Type="int" Nullable="false" />
+          <Property Name="roomId" Type="int" Nullable="false" />
+          <Property Name="reservedTime" Type="datetime" Nullable="false" />
+          <Property Name="price" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Seats">
+          <Key>
+            <PropertyRef Name="seatId" />
+          </Key>
+          <Property Name="seatId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="seatName" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="isVipSeat" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Shops">
+          <Key>
+            <PropertyRef Name="shopId" />
+          </Key>
+          <Property Name="shopId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="shopName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="shopAddress" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="phoneNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Tickets">
+          <Key>
+            <PropertyRef Name="ticketId" />
+          </Key>
+          <Property Name="ticketId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="roomId" Type="int" Nullable="false" />
+          <Property Name="seatId" Type="int" Nullable="false" />
+          <Property Name="seatName" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="movieId" Type="int" Nullable="false" />
+          <Property Name="screeningId" Type="int" Nullable="false" />
+          <Property Name="TicketCode" Type="varchar" MaxLength="12" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="UserFunctions">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="functionId" />
+          </Key>
+          <Property Name="userId" Type="int" Nullable="false" />
+          <Property Name="functionId" Type="int" Nullable="false" />
+          <Property Name="groupId" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Customers__userI__3D5E1FD2">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Customers" Type="Self.Customers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employees__userI__398D8EEE">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Feedbacks__custo__4CA06362">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Feedbacks" Type="Self.Feedbacks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="customerId" />
+            </Principal>
+            <Dependent Role="Feedbacks">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GroupFunc__funct__44FF419A">
+          <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+          <End Role="GroupFunctions" Type="Self.GroupFunctions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Functions">
+              <PropertyRef Name="functionId" />
+            </Principal>
+            <Dependent Role="GroupFunctions">
+              <PropertyRef Name="functionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__GroupFunc__group__440B1D61">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="1" />
+          <End Role="GroupFunctions" Type="Self.GroupFunctions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="groupId" />
+            </Principal>
+            <Dependent Role="GroupFunctions">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDeta__order__7F2BE32F">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="orderId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDeta__ticke__00200768">
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="ticketId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ticketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__customer__6C190EBB">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="customerId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__employee__6D0D32F4">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products__shopId__5165187F">
+          <End Role="Shops" Type="Self.Shops" Multiplicity="1" />
+          <End Role="Products" Type="Self.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shops">
+              <PropertyRef Name="shopId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="shopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RoomSeats__roomI__68487DD7">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+          <End Role="RoomSeats" Type="Self.RoomSeats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="roomId" />
+            </Principal>
+            <Dependent Role="RoomSeats">
+              <PropertyRef Name="roomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RoomSeats__seatI__693CA210">
+          <End Role="Seats" Type="Self.Seats" Multiplicity="1" />
+          <End Role="RoomSeats" Type="Self.RoomSeats" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seats">
+              <PropertyRef Name="seatId" />
+            </Principal>
+            <Dependent Role="RoomSeats">
+              <PropertyRef Name="seatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Screening__movie__73BA3083">
+          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
+          <End Role="Screening" Type="Self.Screening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movies">
+              <PropertyRef Name="movieId" />
+            </Principal>
+            <Dependent Role="Screening">
+              <PropertyRef Name="movieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Screening__roomI__74AE54BC">
+          <End Role="Rooms" Type="Self.Rooms" Multiplicity="1" />
+          <End Role="Screening" Type="Self.Screening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="roomId" />
+            </Principal>
+            <Dependent Role="Screening">
+              <PropertyRef Name="roomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tickets__797309D9">
+          <End Role="RoomSeats" Type="Self.RoomSeats" Multiplicity="1" />
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomSeats">
+              <PropertyRef Name="roomId" />
+              <PropertyRef Name="seatId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="roomId" />
+              <PropertyRef Name="seatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tickets__movieId__778AC167">
+          <End Role="Movies" Type="Self.Movies" Multiplicity="1" />
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movies">
+              <PropertyRef Name="movieId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="movieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tickets__screeni__787EE5A0">
+          <End Role="Screening" Type="Self.Screening" Multiplicity="1" />
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Screening">
+              <PropertyRef Name="screeningId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="screeningId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserFunct__funct__48CFD27E">
+          <End Role="Functions" Type="Self.Functions" Multiplicity="1" />
+          <End Role="UserFunctions" Type="Self.UserFunctions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Functions">
+              <PropertyRef Name="functionId" />
+            </Principal>
+            <Dependent Role="UserFunctions">
+              <PropertyRef Name="functionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserFunct__group__49C3F6B7">
+          <End Role="Groups" Type="Self.Groups" Multiplicity="0..1" />
+          <End Role="UserFunctions" Type="Self.UserFunctions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="groupId" />
+            </Principal>
+            <Dependent Role="UserFunctions">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserFunct__userI__47DBAE45">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="UserFunctions" Type="Self.UserFunctions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="UserFunctions">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_Customer">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1" />
+          <End Role="Carts" Type="Self.Carts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="customerId" />
+            </Principal>
+            <Dependent Role="Carts">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cart_Ticket">
+          <End Role="Tickets" Type="Self.Tickets" Multiplicity="1" />
+          <End Role="Carts" Type="Self.Carts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="ticketId" />
+            </Principal>
+            <Dependent Role="Carts">
+              <PropertyRef Name="ticketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gallery_Movies">
+          <End Role="Movies" Type="Self.Movies" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Gallery" Type="Self.Gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movies">
+              <PropertyRef Name="movieId" />
+            </Principal>
+            <Dependent Role="Gallery">
+              <PropertyRef Name="objectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gallery_Products">
+          <End Role="Products" Type="Self.Products" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Gallery" Type="Self.Gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="productId" />
+            </Principal>
+            <Dependent Role="Gallery">
+              <PropertyRef Name="objectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gallery_Shops">
+          <End Role="Shops" Type="Self.Shops" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Gallery" Type="Self.Gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shops">
+              <PropertyRef Name="shopId" />
+            </Principal>
+            <Dependent Role="Gallery">
+              <PropertyRef Name="objectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GalleryFeedbacks_Feedbacks">
+          <End Role="Feedbacks" Type="Self.Feedbacks" Multiplicity="1" />
+          <End Role="GalleryFeedbacks" Type="Self.GalleryFeedbacks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feedbacks">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="GalleryFeedbacks">
+              <PropertyRef Name="feedbackId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_GalleryFeedbacks_Gallery">
+          <End Role="Gallery" Type="Self.Gallery" Multiplicity="1" />
+          <End Role="GalleryFeedbacks" Type="Self.GalleryFeedbacks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gallery">
+              <PropertyRef Name="imageId" />
+            </Principal>
+            <Dependent Role="GalleryFeedbacks">
+              <PropertyRef Name="galleryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Carts" EntityType="Self.Carts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Feedbacks" EntityType="Self.Feedbacks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Functions" EntityType="Self.Functions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gallery" EntityType="Self.Gallery" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GalleryFeedbacks" EntityType="Self.GalleryFeedbacks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupFunctions" EntityType="Self.GroupFunctions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Groups" EntityType="Self.Groups" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Movies" EntityType="Self.Movies" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rooms" EntityType="Self.Rooms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RoomSeats" EntityType="Self.RoomSeats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Screening" EntityType="Self.Screening" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seats" EntityType="Self.Seats" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shops" EntityType="Self.Shops" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserFunctions" EntityType="Self.UserFunctions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OrderDetails].[orderId] AS [orderId], 
+    [OrderDetails].[ticketId] AS [ticketId]
+    FROM [dbo].[OrderDetails] AS [OrderDetails]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Customers__userI__3D5E1FD2" Association="Self.FK__Customers__userI__3D5E1FD2">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employees__userI__398D8EEE" Association="Self.FK__Employees__userI__398D8EEE">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Feedbacks__custo__4CA06362" Association="Self.FK__Feedbacks__custo__4CA06362">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Feedbacks" EntitySet="Feedbacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GroupFunc__funct__44FF419A" Association="Self.FK__GroupFunc__funct__44FF419A">
+            <End Role="Functions" EntitySet="Functions" />
+            <End Role="GroupFunctions" EntitySet="GroupFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__GroupFunc__group__440B1D61" Association="Self.FK__GroupFunc__group__440B1D61">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="GroupFunctions" EntitySet="GroupFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDeta__order__7F2BE32F" Association="Self.FK__OrderDeta__order__7F2BE32F">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDeta__ticke__00200768" Association="Self.FK__OrderDeta__ticke__00200768">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__customer__6C190EBB" Association="Self.FK__Orders__customer__6C190EBB">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__employee__6D0D32F4" Association="Self.FK__Orders__employee__6D0D32F4">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products__shopId__5165187F" Association="Self.FK__Products__shopId__5165187F">
+            <End Role="Shops" EntitySet="Shops" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RoomSeats__roomI__68487DD7" Association="Self.FK__RoomSeats__roomI__68487DD7">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="RoomSeats" EntitySet="RoomSeats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RoomSeats__seatI__693CA210" Association="Self.FK__RoomSeats__seatI__693CA210">
+            <End Role="Seats" EntitySet="Seats" />
+            <End Role="RoomSeats" EntitySet="RoomSeats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Screening__movie__73BA3083" Association="Self.FK__Screening__movie__73BA3083">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Screening" EntitySet="Screening" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Screening__roomI__74AE54BC" Association="Self.FK__Screening__roomI__74AE54BC">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Screening" EntitySet="Screening" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tickets__797309D9" Association="Self.FK__Tickets__797309D9">
+            <End Role="RoomSeats" EntitySet="RoomSeats" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tickets__movieId__778AC167" Association="Self.FK__Tickets__movieId__778AC167">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tickets__screeni__787EE5A0" Association="Self.FK__Tickets__screeni__787EE5A0">
+            <End Role="Screening" EntitySet="Screening" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserFunct__funct__48CFD27E" Association="Self.FK__UserFunct__funct__48CFD27E">
+            <End Role="Functions" EntitySet="Functions" />
+            <End Role="UserFunctions" EntitySet="UserFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserFunct__group__49C3F6B7" Association="Self.FK__UserFunct__group__49C3F6B7">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="UserFunctions" EntitySet="UserFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserFunct__userI__47DBAE45" Association="Self.FK__UserFunct__userI__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserFunctions" EntitySet="UserFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_Customer" Association="Self.FK_Cart_Customer">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Carts" EntitySet="Carts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cart_Ticket" Association="Self.FK_Cart_Ticket">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="Carts" EntitySet="Carts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gallery_Movies" Association="Self.FK_Gallery_Movies">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Gallery" EntitySet="Gallery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gallery_Products" Association="Self.FK_Gallery_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Gallery" EntitySet="Gallery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gallery_Shops" Association="Self.FK_Gallery_Shops">
+            <End Role="Shops" EntitySet="Shops" />
+            <End Role="Gallery" EntitySet="Gallery" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GalleryFeedbacks_Feedbacks" Association="Self.FK_GalleryFeedbacks_Feedbacks">
+            <End Role="Feedbacks" EntitySet="Feedbacks" />
+            <End Role="GalleryFeedbacks" EntitySet="GalleryFeedbacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_GalleryFeedbacks_Gallery" Association="Self.FK_GalleryFeedbacks_Gallery">
+            <End Role="Gallery" EntitySet="Gallery" />
+            <End Role="GalleryFeedbacks" EntitySet="GalleryFeedbacks" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="customerId" />
+          </Key>
+          <Property Name="customerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cardNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Customers__userI__3D5E1FD2" FromRole="Customers" ToRole="Users" />
+          <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedbacks__custo__4CA06362" FromRole="Customers" ToRole="Feedbacks" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__customer__6C190EBB" FromRole="Customers" ToRole="Orders" />
+          <NavigationProperty Name="Tickets" Relationship="Self.Carts" FromRole="Customers" ToRole="Tickets" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="employeeId" />
+          </Key>
+          <Property Name="employeeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Employees__userI__398D8EEE" FromRole="Employees" ToRole="Users" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__employee__6D0D32F4" FromRole="Employees" ToRole="Orders" />
+        </EntityType>
+        <EntityType Name="Feedback">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerId" Type="Int32" Nullable="false" />
+          <Property Name="message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Feedbacks__custo__4CA06362" FromRole="Feedbacks" ToRole="Customers" />
+          <NavigationProperty Name="Galleries" Relationship="Self.GalleryFeedbacks" FromRole="Feedbacks" ToRole="Gallery" />
+        </EntityType>
+        <EntityType Name="Function">
+          <Key>
+            <PropertyRef Name="functionId" />
+          </Key>
+          <Property Name="functionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="functionName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UserFunctions" Relationship="Self.FK__UserFunct__funct__48CFD27E" FromRole="Functions" ToRole="UserFunctions" />
+          <NavigationProperty Name="Groups" Relationship="Self.GroupFunctions" FromRole="Functions" ToRole="Groups" />
+        </EntityType>
+        <EntityType Name="Gallery">
+          <Key>
+            <PropertyRef Name="imageId" />
+          </Key>
+          <Property Name="imageId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="imagePath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="objectType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="objectId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Movy" Relationship="Self.FK_Gallery_Movies" FromRole="Gallery" ToRole="Movies" />
+          <NavigationProperty Name="Product" Relationship="Self.FK_Gallery_Products" FromRole="Gallery" ToRole="Products" />
+          <NavigationProperty Name="Shop" Relationship="Self.FK_Gallery_Shops" FromRole="Gallery" ToRole="Shops" />
+          <NavigationProperty Name="Feedbacks" Relationship="Self.GalleryFeedbacks" FromRole="Gallery" ToRole="Feedbacks" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="groupId" />
+          </Key>
+          <Property Name="groupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="groupName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UserFunctions" Relationship="Self.FK__UserFunct__group__49C3F6B7" FromRole="Groups" ToRole="UserFunctions" />
+          <NavigationProperty Name="Functions" Relationship="Self.GroupFunctions" FromRole="Groups" ToRole="Functions" />
+        </EntityType>
+        <EntityType Name="Movy">
+          <Key>
+            <PropertyRef Name="movieId" />
+          </Key>
+          <Property Name="movieId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="movieTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="movieDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="releaseDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="duration" Type="Int32" Nullable="false" />
+          <Property Name="seatsAvailable" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Galleries" Relationship="Self.FK_Gallery_Movies" FromRole="Movies" ToRole="Gallery" />
+          <NavigationProperty Name="Screenings" Relationship="Self.FK__Screening__movie__73BA3083" FromRole="Movies" ToRole="Screening" />
+          <NavigationProperty Name="Tickets" Relationship="Self.FK__Tickets__movieId__778AC167" FromRole="Movies" ToRole="Tickets" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="orderId" />
+          </Key>
+          <Property Name="orderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerId" Type="Int32" Nullable="false" />
+          <Property Name="employeeId" Type="Int32" />
+          <Property Name="totalPrice" Type="Int32" Nullable="false" />
+          <Property Name="isConfirm" Type="Boolean" Nullable="false" />
+          <Property Name="isPurchased" Type="Boolean" Nullable="false" />
+          <Property Name="bookingDate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Customer" Relationship="Self.FK__Orders__customer__6C190EBB" FromRole="Orders" ToRole="Customers" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK__Orders__employee__6D0D32F4" FromRole="Orders" ToRole="Employees" />
+          <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__order__7F2BE32F" FromRole="Orders" ToRole="OrderDetails" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="productId" />
+          </Key>
+          <Property Name="productId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="productName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="productDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="shopId" Type="Int32" Nullable="false" />
+          <Property Name="imagePath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Galleries" Relationship="Self.FK_Gallery_Products" FromRole="Products" ToRole="Gallery" />
+          <NavigationProperty Name="Shop" Relationship="Self.FK__Products__shopId__5165187F" FromRole="Products" ToRole="Shops" />
+        </EntityType>
+        <EntityType Name="Room">
+          <Key>
+            <PropertyRef Name="roomId" />
+          </Key>
+          <Property Name="roomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numberOfSeats" Type="Int32" Nullable="false" />
+          <Property Name="isAvailable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="RoomSeats" Relationship="Self.FK__RoomSeats__roomI__68487DD7" FromRole="Rooms" ToRole="RoomSeats" />
+          <NavigationProperty Name="Screenings" Relationship="Self.FK__Screening__roomI__74AE54BC" FromRole="Rooms" ToRole="Screening" />
+        </EntityType>
+        <EntityType Name="RoomSeat">
+          <Key>
+            <PropertyRef Name="roomId" />
+            <PropertyRef Name="seatId" />
+          </Key>
+          <Property Name="roomId" Type="Int32" Nullable="false" />
+          <Property Name="seatId" Type="Int32" Nullable="false" />
+          <Property Name="isAvailable" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Room" Relationship="Self.FK__RoomSeats__roomI__68487DD7" FromRole="RoomSeats" ToRole="Rooms" />
+          <NavigationProperty Name="Seat" Relationship="Self.FK__RoomSeats__seatI__693CA210" FromRole="RoomSeats" ToRole="Seats" />
+          <NavigationProperty Name="Tickets" Relationship="Self.FK__Tickets__797309D9" FromRole="RoomSeats" ToRole="Tickets" />
+        </EntityType>
+        <EntityType Name="Screening">
+          <Key>
+            <PropertyRef Name="screeningId" />
+          </Key>
+          <Property Name="screeningId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="movieId" Type="Int32" Nullable="false" />
+          <Property Name="roomId" Type="Int32" Nullable="false" />
+          <Property Name="reservedTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="price" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Movy" Relationship="Self.FK__Screening__movie__73BA3083" FromRole="Screening" ToRole="Movies" />
+          <NavigationProperty Name="Room" Relationship="Self.FK__Screening__roomI__74AE54BC" FromRole="Screening" ToRole="Rooms" />
+          <NavigationProperty Name="Tickets" Relationship="Self.FK__Tickets__screeni__787EE5A0" FromRole="Screening" ToRole="Tickets" />
+        </EntityType>
+        <EntityType Name="Seat">
+          <Key>
+            <PropertyRef Name="seatId" />
+          </Key>
+          <Property Name="seatId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="seatName" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="isVipSeat" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="RoomSeats" Relationship="Self.FK__RoomSeats__seatI__693CA210" FromRole="Seats" ToRole="RoomSeats" />
+        </EntityType>
+        <EntityType Name="Shop">
+          <Key>
+            <PropertyRef Name="shopId" />
+          </Key>
+          <Property Name="shopId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="shopName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="shopAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="phoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Galleries" Relationship="Self.FK_Gallery_Shops" FromRole="Shops" ToRole="Gallery" />
+          <NavigationProperty Name="Products" Relationship="Self.FK__Products__shopId__5165187F" FromRole="Shops" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Ticket">
+          <Key>
+            <PropertyRef Name="ticketId" />
+          </Key>
+          <Property Name="ticketId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="roomId" Type="Int32" Nullable="false" />
+          <Property Name="seatId" Type="Int32" Nullable="false" />
+          <Property Name="seatName" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="movieId" Type="Int32" Nullable="false" />
+          <Property Name="screeningId" Type="Int32" Nullable="false" />
+          <Property Name="TicketCode" Type="String" MaxLength="12" FixedLength="false" Unicode="false" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="Movy" Relationship="Self.FK__Tickets__movieId__778AC167" FromRole="Tickets" ToRole="Movies" />
+          <NavigationProperty Name="RoomSeat" Relationship="Self.FK__Tickets__797309D9" FromRole="Tickets" ToRole="RoomSeats" />
+          <NavigationProperty Name="Screening" Relationship="Self.FK__Tickets__screeni__787EE5A0" FromRole="Tickets" ToRole="Screening" />
+          <NavigationProperty Name="OrderDetail" Relationship="Self.FK__OrderDeta__ticke__00200768" FromRole="Tickets" ToRole="OrderDetails" />
+          <NavigationProperty Name="Customers" Relationship="Self.Carts" FromRole="Tickets" ToRole="Customers" />
+        </EntityType>
+        <EntityType Name="UserFunction">
+          <Key>
+            <PropertyRef Name="userId" />
+            <PropertyRef Name="functionId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" />
+          <Property Name="functionId" Type="Int32" Nullable="false" />
+          <Property Name="groupId" Type="Int32" />
+          <NavigationProperty Name="Function" Relationship="Self.FK__UserFunct__funct__48CFD27E" FromRole="UserFunctions" ToRole="Functions" />
+          <NavigationProperty Name="Group" Relationship="Self.FK__UserFunct__group__49C3F6B7" FromRole="UserFunctions" ToRole="Groups" />
+          <NavigationProperty Name="User" Relationship="Self.FK__UserFunct__userI__47DBAE45" FromRole="UserFunctions" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="userId" />
+          </Key>
+          <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK__Customers__userI__3D5E1FD2" FromRole="Users" ToRole="Customers" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK__Employees__userI__398D8EEE" FromRole="Users" ToRole="Employees" />
+          <NavigationProperty Name="UserFunctions" Relationship="Self.FK__UserFunct__userI__47DBAE45" FromRole="Users" ToRole="UserFunctions" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="ticketId" />
+          </Key>
+          <Property Name="orderId" Type="Int32" />
+          <Property Name="ticketId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="Self.FK__OrderDeta__order__7F2BE32F" FromRole="OrderDetails" ToRole="Orders" />
+          <NavigationProperty Name="Ticket" Relationship="Self.FK__OrderDeta__ticke__00200768" FromRole="OrderDetails" ToRole="Tickets" />
+        </EntityType>
+        <Association Name="FK__Customers__userI__3D5E1FD2">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Customers">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Feedbacks__custo__4CA06362">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Feedbacks" Type="Self.Feedback" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="customerId" />
+            </Principal>
+            <Dependent Role="Feedbacks">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__customer__6C190EBB">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="customerId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="customerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employees__userI__398D8EEE">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Orders__employee__6D0D32F4">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="employeeId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="employeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserFunct__funct__48CFD27E">
+          <End Role="Functions" Type="Self.Function" Multiplicity="1" />
+          <End Role="UserFunctions" Type="Self.UserFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Functions">
+              <PropertyRef Name="functionId" />
+            </Principal>
+            <Dependent Role="UserFunctions">
+              <PropertyRef Name="functionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gallery_Movies">
+          <End Role="Movies" Type="Self.Movy" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Gallery" Type="Self.Gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movies">
+              <PropertyRef Name="movieId" />
+            </Principal>
+            <Dependent Role="Gallery">
+              <PropertyRef Name="objectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gallery_Products">
+          <End Role="Products" Type="Self.Product" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Gallery" Type="Self.Gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="productId" />
+            </Principal>
+            <Dependent Role="Gallery">
+              <PropertyRef Name="objectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gallery_Shops">
+          <End Role="Shops" Type="Self.Shop" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Gallery" Type="Self.Gallery" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shops">
+              <PropertyRef Name="shopId" />
+            </Principal>
+            <Dependent Role="Gallery">
+              <PropertyRef Name="objectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserFunct__group__49C3F6B7">
+          <End Role="Groups" Type="Self.Group" Multiplicity="0..1" />
+          <End Role="UserFunctions" Type="Self.UserFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="groupId" />
+            </Principal>
+            <Dependent Role="UserFunctions">
+              <PropertyRef Name="groupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Screening__movie__73BA3083">
+          <End Role="Movies" Type="Self.Movy" Multiplicity="1" />
+          <End Role="Screening" Type="Self.Screening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movies">
+              <PropertyRef Name="movieId" />
+            </Principal>
+            <Dependent Role="Screening">
+              <PropertyRef Name="movieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tickets__movieId__778AC167">
+          <End Role="Movies" Type="Self.Movy" Multiplicity="1" />
+          <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Movies">
+              <PropertyRef Name="movieId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="movieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDeta__order__7F2BE32F">
+          <End Role="Orders" Type="Self.Order" Multiplicity="0..1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="orderId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products__shopId__5165187F">
+          <End Role="Shops" Type="Self.Shop" Multiplicity="1" />
+          <End Role="Products" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Shops">
+              <PropertyRef Name="shopId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="shopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RoomSeats__roomI__68487DD7">
+          <End Role="Rooms" Type="Self.Room" Multiplicity="1" />
+          <End Role="RoomSeats" Type="Self.RoomSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="roomId" />
+            </Principal>
+            <Dependent Role="RoomSeats">
+              <PropertyRef Name="roomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Screening__roomI__74AE54BC">
+          <End Role="Rooms" Type="Self.Room" Multiplicity="1" />
+          <End Role="Screening" Type="Self.Screening" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rooms">
+              <PropertyRef Name="roomId" />
+            </Principal>
+            <Dependent Role="Screening">
+              <PropertyRef Name="roomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__RoomSeats__seatI__693CA210">
+          <End Role="Seats" Type="Self.Seat" Multiplicity="1" />
+          <End Role="RoomSeats" Type="Self.RoomSeat" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Seats">
+              <PropertyRef Name="seatId" />
+            </Principal>
+            <Dependent Role="RoomSeats">
+              <PropertyRef Name="seatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tickets__797309D9">
+          <End Role="RoomSeats" Type="Self.RoomSeat" Multiplicity="1" />
+          <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RoomSeats">
+              <PropertyRef Name="roomId" />
+              <PropertyRef Name="seatId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="roomId" />
+              <PropertyRef Name="seatId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tickets__screeni__787EE5A0">
+          <End Role="Screening" Type="Self.Screening" Multiplicity="1" />
+          <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Screening">
+              <PropertyRef Name="screeningId" />
+            </Principal>
+            <Dependent Role="Tickets">
+              <PropertyRef Name="screeningId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderDeta__ticke__00200768">
+          <End Role="Tickets" Type="Self.Ticket" Multiplicity="1" />
+          <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Tickets">
+              <PropertyRef Name="ticketId" />
+            </Principal>
+            <Dependent Role="OrderDetails">
+              <PropertyRef Name="ticketId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__UserFunct__userI__47DBAE45">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="UserFunctions" Type="Self.UserFunction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="UserFunctions">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Carts">
+          <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+          <End Role="Tickets" Type="Self.Ticket" Multiplicity="*" />
+        </Association>
+        <Association Name="GalleryFeedbacks">
+          <End Role="Feedbacks" Type="Self.Feedback" Multiplicity="*" />
+          <End Role="Gallery" Type="Self.Gallery" Multiplicity="*" />
+        </Association>
+        <Association Name="GroupFunctions">
+          <End Role="Functions" Type="Self.Function" Multiplicity="*" />
+          <End Role="Groups" Type="Self.Group" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Feedbacks" EntityType="Self.Feedback" />
+          <EntitySet Name="Functions" EntityType="Self.Function" />
+          <EntitySet Name="Galleries" EntityType="Self.Gallery" />
+          <EntitySet Name="Groups" EntityType="Self.Group" />
+          <EntitySet Name="Movies" EntityType="Self.Movy" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="Rooms" EntityType="Self.Room" />
+          <EntitySet Name="RoomSeats" EntityType="Self.RoomSeat" />
+          <EntitySet Name="Screenings" EntityType="Self.Screening" />
+          <EntitySet Name="Seats" EntityType="Self.Seat" />
+          <EntitySet Name="Shops" EntityType="Self.Shop" />
+          <EntitySet Name="Tickets" EntityType="Self.Ticket" />
+          <EntitySet Name="UserFunctions" EntityType="Self.UserFunction" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <AssociationSet Name="FK__Customers__userI__3D5E1FD2" Association="Self.FK__Customers__userI__3D5E1FD2">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Customers" EntitySet="Customers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Feedbacks__custo__4CA06362" Association="Self.FK__Feedbacks__custo__4CA06362">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Feedbacks" EntitySet="Feedbacks" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__customer__6C190EBB" Association="Self.FK__Orders__customer__6C190EBB">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employees__userI__398D8EEE" Association="Self.FK__Employees__userI__398D8EEE">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Orders__employee__6D0D32F4" Association="Self.FK__Orders__employee__6D0D32F4">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserFunct__funct__48CFD27E" Association="Self.FK__UserFunct__funct__48CFD27E">
+            <End Role="Functions" EntitySet="Functions" />
+            <End Role="UserFunctions" EntitySet="UserFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gallery_Movies" Association="Self.FK_Gallery_Movies">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Gallery" EntitySet="Galleries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gallery_Products" Association="Self.FK_Gallery_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Gallery" EntitySet="Galleries" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gallery_Shops" Association="Self.FK_Gallery_Shops">
+            <End Role="Shops" EntitySet="Shops" />
+            <End Role="Gallery" EntitySet="Galleries" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserFunct__group__49C3F6B7" Association="Self.FK__UserFunct__group__49C3F6B7">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="UserFunctions" EntitySet="UserFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Screening__movie__73BA3083" Association="Self.FK__Screening__movie__73BA3083">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Screening" EntitySet="Screenings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tickets__movieId__778AC167" Association="Self.FK__Tickets__movieId__778AC167">
+            <End Role="Movies" EntitySet="Movies" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDeta__order__7F2BE32F" Association="Self.FK__OrderDeta__order__7F2BE32F">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products__shopId__5165187F" Association="Self.FK__Products__shopId__5165187F">
+            <End Role="Shops" EntitySet="Shops" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RoomSeats__roomI__68487DD7" Association="Self.FK__RoomSeats__roomI__68487DD7">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="RoomSeats" EntitySet="RoomSeats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Screening__roomI__74AE54BC" Association="Self.FK__Screening__roomI__74AE54BC">
+            <End Role="Rooms" EntitySet="Rooms" />
+            <End Role="Screening" EntitySet="Screenings" />
+          </AssociationSet>
+          <AssociationSet Name="FK__RoomSeats__seatI__693CA210" Association="Self.FK__RoomSeats__seatI__693CA210">
+            <End Role="Seats" EntitySet="Seats" />
+            <End Role="RoomSeats" EntitySet="RoomSeats" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tickets__797309D9" Association="Self.FK__Tickets__797309D9">
+            <End Role="RoomSeats" EntitySet="RoomSeats" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tickets__screeni__787EE5A0" Association="Self.FK__Tickets__screeni__787EE5A0">
+            <End Role="Screening" EntitySet="Screenings" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderDeta__ticke__00200768" Association="Self.FK__OrderDeta__ticke__00200768">
+            <End Role="Tickets" EntitySet="Tickets" />
+            <End Role="OrderDetails" EntitySet="OrderDetails" />
+          </AssociationSet>
+          <AssociationSet Name="FK__UserFunct__userI__47DBAE45" Association="Self.FK__UserFunct__userI__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="UserFunctions" EntitySet="UserFunctions" />
+          </AssociationSet>
+          <AssociationSet Name="Carts" Association="Self.Carts">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Tickets" EntitySet="Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="GalleryFeedbacks" Association="Self.GalleryFeedbacks">
+            <End Role="Feedbacks" EntitySet="Feedbacks" />
+            <End Role="Gallery" EntitySet="Galleries" />
+          </AssociationSet>
+          <AssociationSet Name="GroupFunctions" Association="Self.GroupFunctions">
+            <End Role="Functions" EntitySet="Functions" />
+            <End Role="Groups" EntitySet="Groups" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="Model.Customer">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="cardNumber" ColumnName="cardNumber" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="Model.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="userId" ColumnName="userId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Feedbacks">
+            <EntityTypeMapping TypeName="Model.Feedback">
+              <MappingFragment StoreEntitySet="Feedbacks">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="message" ColumnName="message" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Functions">
+            <EntityTypeMapping TypeName="Model.Function">
+              <MappingFragment StoreEntitySet="Functions">
+                <ScalarProperty Name="functionId" ColumnName="functionId" />
+                <ScalarProperty Name="functionName" ColumnName="functionName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Galleries">
+            <EntityTypeMapping TypeName="Model.Gallery">
+              <MappingFragment StoreEntitySet="Gallery">
+                <ScalarProperty Name="imageId" ColumnName="imageId" />
+                <ScalarProperty Name="imagePath" ColumnName="imagePath" />
+                <ScalarProperty Name="objectType" ColumnName="objectType" />
+                <ScalarProperty Name="objectId" ColumnName="objectId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="Model.Group">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="groupId" ColumnName="groupId" />
+                <ScalarProperty Name="groupName" ColumnName="groupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Movies">
+            <EntityTypeMapping TypeName="Model.Movy">
+              <MappingFragment StoreEntitySet="Movies">
+                <ScalarProperty Name="movieId" ColumnName="movieId" />
+                <ScalarProperty Name="movieTitle" ColumnName="movieTitle" />
+                <ScalarProperty Name="movieDescription" ColumnName="movieDescription" />
+                <ScalarProperty Name="releaseDate" ColumnName="releaseDate" />
+                <ScalarProperty Name="duration" ColumnName="duration" />
+                <ScalarProperty Name="seatsAvailable" ColumnName="seatsAvailable" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="Model.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="customerId" ColumnName="customerId" />
+                <ScalarProperty Name="employeeId" ColumnName="employeeId" />
+                <ScalarProperty Name="totalPrice" ColumnName="totalPrice" />
+                <ScalarProperty Name="isConfirm" ColumnName="isConfirm" />
+                <ScalarProperty Name="isPurchased" ColumnName="isPurchased" />
+                <ScalarProperty Name="bookingDate" ColumnName="bookingDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="Model.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="productId" ColumnName="productId" />
+                <ScalarProperty Name="productName" ColumnName="productName" />
+                <ScalarProperty Name="productDescription" ColumnName="productDescription" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="shopId" ColumnName="shopId" />
+                <ScalarProperty Name="imagePath" ColumnName="imagePath" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rooms">
+            <EntityTypeMapping TypeName="Model.Room">
+              <MappingFragment StoreEntitySet="Rooms">
+                <ScalarProperty Name="roomId" ColumnName="roomId" />
+                <ScalarProperty Name="numberOfSeats" ColumnName="numberOfSeats" />
+                <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RoomSeats">
+            <EntityTypeMapping TypeName="Model.RoomSeat">
+              <MappingFragment StoreEntitySet="RoomSeats">
+                <ScalarProperty Name="roomId" ColumnName="roomId" />
+                <ScalarProperty Name="seatId" ColumnName="seatId" />
+                <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Screenings">
+            <EntityTypeMapping TypeName="Model.Screening">
+              <MappingFragment StoreEntitySet="Screening">
+                <ScalarProperty Name="screeningId" ColumnName="screeningId" />
+                <ScalarProperty Name="movieId" ColumnName="movieId" />
+                <ScalarProperty Name="roomId" ColumnName="roomId" />
+                <ScalarProperty Name="reservedTime" ColumnName="reservedTime" />
+                <ScalarProperty Name="price" ColumnName="price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Seats">
+            <EntityTypeMapping TypeName="Model.Seat">
+              <MappingFragment StoreEntitySet="Seats">
+                <ScalarProperty Name="seatId" ColumnName="seatId" />
+                <ScalarProperty Name="seatName" ColumnName="seatName" />
+                <ScalarProperty Name="isVipSeat" ColumnName="isVipSeat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shops">
+            <EntityTypeMapping TypeName="Model.Shop">
+              <MappingFragment StoreEntitySet="Shops">
+                <ScalarProperty Name="shopId" ColumnName="shopId" />
+                <ScalarProperty Name="shopName" ColumnName="shopName" />
+                <ScalarProperty Name="shopAddress" ColumnName="shopAddress" />
+                <ScalarProperty Name="phoneNumber" ColumnName="phoneNumber" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tickets">
+            <EntityTypeMapping TypeName="Model.Ticket">
+              <MappingFragment StoreEntitySet="Tickets">
+                <ScalarProperty Name="ticketId" ColumnName="ticketId" />
+                <ScalarProperty Name="roomId" ColumnName="roomId" />
+                <ScalarProperty Name="seatId" ColumnName="seatId" />
+                <ScalarProperty Name="seatName" ColumnName="seatName" />
+                <ScalarProperty Name="movieId" ColumnName="movieId" />
+                <ScalarProperty Name="screeningId" ColumnName="screeningId" />
+                <ScalarProperty Name="TicketCode" ColumnName="TicketCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserFunctions">
+            <EntityTypeMapping TypeName="Model.UserFunction">
+              <MappingFragment StoreEntitySet="UserFunctions">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="functionId" ColumnName="functionId" />
+                <ScalarProperty Name="groupId" ColumnName="groupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="Model.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="userId" ColumnName="userId" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="Model.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="orderId" ColumnName="orderId" />
+                <ScalarProperty Name="ticketId" ColumnName="ticketId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Carts" TypeName="Model.Carts" StoreEntitySet="Carts">
+            <EndProperty Name="Customers">
+              <ScalarProperty Name="customerId" ColumnName="customerId" />
+            </EndProperty>
+            <EndProperty Name="Tickets">
+              <ScalarProperty Name="ticketId" ColumnName="ticketId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="GalleryFeedbacks" TypeName="Model.GalleryFeedbacks" StoreEntitySet="GalleryFeedbacks">
+            <EndProperty Name="Feedbacks">
+              <ScalarProperty Name="id" ColumnName="feedbackId" />
+            </EndProperty>
+            <EndProperty Name="Gallery">
+              <ScalarProperty Name="imageId" ColumnName="galleryId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="GroupFunctions" TypeName="Model.GroupFunctions" StoreEntitySet="GroupFunctions">
+            <EndProperty Name="Functions">
+              <ScalarProperty Name="functionId" ColumnName="functionId" />
+            </EndProperty>
+            <EndProperty Name="Groups">
+              <ScalarProperty Name="groupId" ColumnName="groupId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

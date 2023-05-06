@@ -1,0 +1,415 @@
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\ABCD_Admin.dll.config
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\ABCD_Admin.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\ABCD_Admin.pdb
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\csc.exe
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\csc.exe.config
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\csc.rsp
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\csi.exe
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\csi.exe.config
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\csi.rsp
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.AppContext.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Console.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.IO.Compression.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Net.Http.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.ValueTuple.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\vbc.exe
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\vbc.exe.config
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\vbc.rsp
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\VBCSCompiler.exe
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\Antlr3.Runtime.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\Newtonsoft.Json.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.Helpers.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.Mvc.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.Optimization.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.Razor.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.WebPages.Deployment.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.WebPages.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.WebPages.Razor.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\WebGrease.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.Helpers.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.Mvc.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.Optimization.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.Razor.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.WebPages.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.WebPages.Deployment.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\System.Web.WebPages.Razor.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\Newtonsoft.Json.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\Antlr3.Runtime.pdb
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CopyComplete
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\obj\Debug\ABCD_Admin.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\obj\Debug\ABCD_Admin.pdb
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\EntityFramework.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\EntityFramework.SqlServer.dll
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\EntityFramework.xml
+C:\Users\ASUS\source\repos\ABCD_Admin\ABCD_Admin\bin\EntityFramework.SqlServer.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\ABCD_Admin.dll.config
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\ABCD_Admin.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\ABCD_Admin.pdb
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\csc.exe
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\csc.exe.config
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\csc.rsp
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\csi.exe
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\csi.exe.config
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\csi.rsp
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.AppContext.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Console.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.IO.Compression.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Net.Http.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.ValueTuple.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\vbc.exe
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\vbc.exe.config
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\vbc.rsp
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\VBCSCompiler.exe
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\Antlr3.Runtime.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\EntityFramework.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\EntityFramework.SqlServer.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\Newtonsoft.Json.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.Helpers.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.Mvc.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.Optimization.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.Razor.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.WebPages.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.WebPages.Razor.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\WebGrease.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\EntityFramework.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\EntityFramework.SqlServer.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.Helpers.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.Mvc.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.Optimization.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.Razor.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.WebPages.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\System.Web.WebPages.Razor.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\Newtonsoft.Json.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\Antlr3.Runtime.pdb
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CoreCompileInputs.cache
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CopyComplete
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.dll
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.pdb
+C:\Users\Min\Source\Repos\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.AssemblyReference.cache
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\ABCD_Admin.dll.config
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\ABCD_Admin.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\ABCD_Admin.pdb
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\csc.exe
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\csc.exe.config
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\csc.rsp
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\csi.exe
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\csi.exe.config
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\csi.rsp
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.AppContext.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Collections.Immutable.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Console.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Globalization.Calendars.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.IO.Compression.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.IO.FileSystem.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Net.Http.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Net.Sockets.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Reflection.Metadata.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.ValueTuple.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XPath.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\vbc.exe
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\vbc.exe.config
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\vbc.rsp
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\VBCSCompiler.exe
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\roslyn\VBCSCompiler.exe.config
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\Antlr3.Runtime.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\EntityFramework.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\EntityFramework.SqlServer.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\Microsoft.Web.Infrastructure.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\Newtonsoft.Json.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.Helpers.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.Mvc.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.Optimization.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.Razor.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.WebPages.Deployment.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.WebPages.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.WebPages.Razor.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\WebGrease.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\EntityFramework.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\EntityFramework.SqlServer.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.Helpers.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.Mvc.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.Optimization.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.Razor.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.WebPages.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.WebPages.Deployment.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\System.Web.WebPages.Razor.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\Newtonsoft.Json.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\Antlr3.Runtime.pdb
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.AssemblyReference.cache
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CoreCompileInputs.cache
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CopyComplete
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.dll
+C:\Code\Eproject3\main project\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.pdb
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\ABCD_Admin.dll.config
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\ABCD_Admin.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\ABCD_Admin.pdb
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\csc.exe
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\csc.exe.config
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\csc.rsp
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\csi.exe
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\csi.exe.config
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\csi.rsp
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Managed.Core.targets
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.AppContext.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Collections.Immutable.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Console.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Globalization.Calendars.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.IO.Compression.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.IO.FileSystem.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Net.Http.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Net.Sockets.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Reflection.Metadata.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.ValueTuple.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XmlDocument.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XPath.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\vbc.exe
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\vbc.exe.config
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\vbc.rsp
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\VBCSCompiler.exe
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\roslyn\VBCSCompiler.exe.config
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\Antlr3.Runtime.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\EntityFramework.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\EntityFramework.SqlServer.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\Microsoft.Web.Infrastructure.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\Newtonsoft.Json.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.Helpers.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.Mvc.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.Optimization.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.Razor.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.WebPages.Deployment.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.WebPages.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.WebPages.Razor.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\WebGrease.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\EntityFramework.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\EntityFramework.SqlServer.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.Helpers.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.Mvc.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.Optimization.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.Razor.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.WebPages.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.WebPages.Deployment.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\System.Web.WebPages.Razor.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\Newtonsoft.Json.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\Antlr3.Runtime.pdb
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.AssemblyReference.cache
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CoreCompileInputs.cache
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CopyComplete
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.dll
+D:\DoAnKy3\Source\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.pdb
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\ABCD_Admin.dll.config
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\ABCD_Admin.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\ABCD_Admin.pdb
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\csc.exe
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\csc.exe.config
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\csc.rsp
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\csi.exe
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\csi.exe.config
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\csi.rsp
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Managed.Core.targets
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.AppContext.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Collections.Immutable.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Console.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Globalization.Calendars.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.IO.Compression.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.IO.FileSystem.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Net.Http.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Net.Sockets.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Reflection.Metadata.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.ValueTuple.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XmlDocument.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XPath.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\vbc.exe
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\vbc.exe.config
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\vbc.rsp
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\VBCSCompiler.exe
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\roslyn\VBCSCompiler.exe.config
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\Antlr3.Runtime.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\EntityFramework.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\EntityFramework.SqlServer.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\Microsoft.Web.Infrastructure.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\Newtonsoft.Json.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.Helpers.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.Mvc.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.Optimization.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.Razor.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.WebPages.Deployment.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.WebPages.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.WebPages.Razor.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\WebGrease.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\EntityFramework.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\EntityFramework.SqlServer.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.Helpers.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.Mvc.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.Optimization.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.Razor.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.WebPages.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.WebPages.Deployment.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\System.Web.WebPages.Razor.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\Newtonsoft.Json.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\Antlr3.Runtime.pdb
+D:\ABCD_Admin\eProject3\ABCD_Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\ABCD_Admin\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.AssemblyReference.cache
+D:\ABCD_Admin\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CoreCompileInputs.cache
+D:\ABCD_Admin\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CopyComplete
+D:\ABCD_Admin\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.dll
+D:\ABCD_Admin\eProject3\ABCD_Admin\obj\Debug\ABCD_Admin.pdb
