@@ -35,11 +35,11 @@ namespace ABCD_Admin.Controllers
                 return HttpNotFound();
             }
 
-            //// Retrieve all RoomSeat objects associated with the Room
-            //List<RoomSeat> roomSeats = db.RoomSeats.Include(s=> s.Seat).Where(rs => rs.roomId == id).ToList();
+            // Retrieve all RoomSeat objects associated with the Room
+            List<RoomSeat> roomSeats = db.RoomSeats.Include(s => s.Seat).Where(rs => rs.roomId == room.roomId).ToList();
 
-            //// Pass the RoomSeats list to the view using ViewBag
-            //ViewBag.RoomSeats = roomSeats;
+            // Pass the RoomSeats list to the view using ViewBag
+            ViewBag.RoomSeats = roomSeats;
 
             return View(room);
         }
