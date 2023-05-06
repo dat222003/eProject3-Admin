@@ -44,11 +44,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Screening.screeningId)
+            @Html.DisplayNameFor(model => model.Screening.reservedTime)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Screening.screeningId)
+            @Html.DisplayFor(model => model.Screening.reservedTime)
+        </dd>
+
+        <dt>
+            Ticket Price
+        </dt>
+
+        <dd>
+            @ViewBag.TicketPrice
         </dd>
 
     </dl>

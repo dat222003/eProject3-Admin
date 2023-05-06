@@ -28,13 +28,27 @@ namespace ABCD_Admin.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
+            // Retrieve the order detail for this ticket
+            var orderDetail = db.OrderDetails.FirstOrDefault(o => o.ticketId == id);
+            if (orderDetail == null)
+            {
+                return HttpNotFound();
+            }
+
+            // Retrieve the ticket information using the ticketId from the order detail
             Ticket ticket = db.Tickets.Find(id);
             if (ticket == null)
             {
                 return HttpNotFound();
             }
+
+            // Pass both the ticket and order detail data to the view
+            ViewBag.TicketPrice = orderDetail.ticketPrice;
             return View(ticket);
         }
+
+
 
 
         // GET: Tickets/Delete/5

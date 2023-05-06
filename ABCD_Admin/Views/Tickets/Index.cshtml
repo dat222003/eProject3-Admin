@@ -7,9 +7,7 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -25,7 +23,7 @@
             @Html.DisplayNameFor(model => model.RoomSeat.roomId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Screening.screeningId)
+            @Html.DisplayNameFor(model => model.Screening.reservedTime)
         </th>
         <th></th>
     </tr>
@@ -45,10 +43,9 @@
             @Html.DisplayFor(modelItem => item.RoomSeat.roomId)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Screening.screeningId)
+            @Html.DisplayFor(modelItem => item.Screening.reservedTime)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ticketId }) |
             @Html.ActionLink("Details", "Details", new { id=item.ticketId }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ticketId })
         </td>
