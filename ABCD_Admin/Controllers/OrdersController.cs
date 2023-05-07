@@ -18,6 +18,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Index()
         {
             var orders = db.Orders.Include(o => o.Customer).Include(o => o.Employee);
+            ViewBag.Position = "Orders";
             return View(orders.ToList());
         }
 
@@ -39,7 +40,7 @@ namespace ABCD_Admin.Controllers
             List<OrderDetail> orderDetails = db.OrderDetails.Where(od => od.orderId == order.orderId).ToList();
 
             ViewBag.OrderDetails = orderDetails;
-
+            ViewBag.Position = "Orders";
             return View(order);
         }
 
@@ -58,6 +59,7 @@ namespace ABCD_Admin.Controllers
             }
             ViewBag.customerId = new SelectList(db.Customers, "customerId", "cardNumber", order.customerId);
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "employeeId", order.employeeId);
+            ViewBag.Position = "Orders";
             return View(order);
         }
 
@@ -78,12 +80,13 @@ namespace ABCD_Admin.Controllers
 
                 db.Entry(existingOrder).State = EntityState.Modified;
                 db.SaveChanges();
-
+                ViewBag.Position = "Orders";
                 return RedirectToAction("Index");
             }
 
             ViewBag.customerId = new SelectList(db.Customers, "customerId", "cardNumber", order.customerId);
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "employeeId", order.employeeId);
+            ViewBag.Position = "Orders";
             return View(order);
         }
 
@@ -100,6 +103,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Orders";
             return View(order);
         }
 
@@ -111,6 +115,7 @@ namespace ABCD_Admin.Controllers
             Order order = db.Orders.Find(id);
             db.Orders.Remove(order);
             db.SaveChanges();
+            ViewBag.Position = "Orders";
             return RedirectToAction("Index");
         }
 

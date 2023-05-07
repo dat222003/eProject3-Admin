@@ -18,6 +18,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Index()
         {
             var tickets = db.Tickets.Include(t => t.Movy).Include(t => t.RoomSeat).Include(t => t.Screening);
+            ViewBag.Position = "Tickets";
             return View(tickets.ToList());
         }
 
@@ -45,6 +46,7 @@ namespace ABCD_Admin.Controllers
 
             // Pass both the ticket and order detail data to the view
             ViewBag.TicketPrice = orderDetail.ticketPrice;
+            ViewBag.Position = "Tickets";
             return View(ticket);
         }
 
@@ -63,6 +65,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Tickets";
             return View(ticket);
         }
 
@@ -74,6 +77,7 @@ namespace ABCD_Admin.Controllers
             Ticket ticket = db.Tickets.Find(id);
             db.Tickets.Remove(ticket);
             db.SaveChanges();
+            ViewBag.Position = "Tickets";
             return RedirectToAction("Index");
         }
 

@@ -17,6 +17,7 @@ namespace ABCD_Admin.Controllers
         // GET: Functions
         public ActionResult Index()
         {
+            ViewBag.Position = "Functions";
             return View(db.Functions.ToList());
         }
 
@@ -32,12 +33,14 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Functions";
             return View(function);
         }
 
         // GET: Functions/Create
         public ActionResult Create()
         {
+            ViewBag.Position = "Functions";
             return View();
         }
 
@@ -52,9 +55,10 @@ namespace ABCD_Admin.Controllers
             {
                 db.Functions.Add(function);
                 db.SaveChanges();
+                ViewBag.Position = "Functions";
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Position = "Functions";
             return View(function);
         }
 
@@ -70,6 +74,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Functions";
             return View(function);
         }
 
@@ -84,8 +89,10 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(function).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Functions";
                 return RedirectToAction("Index");
             }
+            ViewBag.Position = "Functions";
             return View(function);
         }
 
@@ -101,6 +108,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Functions";
             return View(function);
         }
 
@@ -112,6 +120,7 @@ namespace ABCD_Admin.Controllers
             Function function = db.Functions.Find(id);
             db.Functions.Remove(function);
             db.SaveChanges();
+            ViewBag.Position = "Functions";
             return RedirectToAction("Index");
         }
 

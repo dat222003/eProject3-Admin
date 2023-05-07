@@ -41,7 +41,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Logout()
         {
             Session.Clear();
-
+            ViewBag.Position = "Users";
             return RedirectToAction("Login", "Users");
         }
 
@@ -49,6 +49,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Index()
         {
             var users = db.Users.Include(u => u.Employee);
+            ViewBag.Position = "Users";
             return View(users.ToList());
         }
 
@@ -68,6 +69,7 @@ namespace ABCD_Admin.Controllers
             List<Function> functions = user.Functions.ToList();
             ViewBag.groups = groups;
             ViewBag.functions = functions;
+            ViewBag.Position = "Users";
             return View(user);
         }
 
@@ -77,6 +79,7 @@ namespace ABCD_Admin.Controllers
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "email");
             ViewBag.groups = new SelectList(db.Groups, "groupId", "groupName");
             ViewBag.functions = new SelectList(db.Functions, "functionId", "functionName");
+            ViewBag.Position = "Users";
             return View();
         }
 
@@ -97,6 +100,7 @@ namespace ABCD_Admin.Controllers
                     ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "email", user.employeeId);
                     ViewBag.groups = new MultiSelectList(db.Groups, "groupId", "groupName", Groups);
                     ViewBag.functions = new MultiSelectList(db.Functions, "functionId", "functionName", Functions);
+                    ViewBag.Position = "Users";
                     return View(user);
                 }
 
@@ -131,14 +135,14 @@ namespace ABCD_Admin.Controllers
                     }
                     db.SaveChanges();
                 }
-
+                ViewBag.Position = "Users";
                 return RedirectToAction("Index");
             }
 
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "email", user.employeeId);
             ViewBag.groups = new MultiSelectList(db.Groups, "groupId", "groupName", Groups);
             ViewBag.functions = new MultiSelectList(db.Functions, "functionId", "functionName", Functions);
-
+            ViewBag.Position = "Users";
             return View(user);
         }
 
@@ -158,6 +162,7 @@ namespace ABCD_Admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "email", user.employeeId);
+            ViewBag.Position = "Users";
             return View(user);
         }
 
@@ -172,9 +177,11 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Users";
                 return RedirectToAction("Index");
             }
             ViewBag.employeeId = new SelectList(db.Employees, "employeeId", "email", user.employeeId);
+            ViewBag.Position = "Users";
             return View(user);
         }
 
@@ -190,6 +197,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Users";
             return View(user);
         }
 
@@ -201,6 +209,7 @@ namespace ABCD_Admin.Controllers
             User user = db.Users.Find(id);
             db.Users.Remove(user);
             db.SaveChanges();
+            ViewBag.Position = "Users";
             return RedirectToAction("Index");
         }
 

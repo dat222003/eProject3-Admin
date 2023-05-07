@@ -18,6 +18,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Index()
         {
             var roomSeats = db.RoomSeats.Include(r => r.Room).Include(r => r.Seat);
+            ViewBag.Position = "Rooms";
             return View(roomSeats.ToList());
         }
 
@@ -35,7 +36,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
-
+            ViewBag.Position = "Rooms";
             return View(roomSeat);
         }
 
@@ -56,7 +57,7 @@ namespace ABCD_Admin.Controllers
 
             ViewBag.roomId = new SelectList(db.Rooms, "roomId", "roomId", roomSeat.roomId);
             ViewBag.seatId = new SelectList(db.Seats, "seatId", "seatName", roomSeat.seatId);
-
+            ViewBag.Position = "Rooms";
             return View(roomSeat);
         }
 
@@ -71,13 +72,13 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(roomSeat).State = EntityState.Modified;
                 db.SaveChanges();
-
+                ViewBag.Position = "Rooms";
                 return RedirectToAction("Index");
             }
 
             ViewBag.roomId = new SelectList(db.Rooms, "roomId", "roomId", roomSeat.roomId);
             ViewBag.seatId = new SelectList(db.Seats, "seatId", "seatName", roomSeat.seatId);
-
+            ViewBag.Position = "Rooms";
             return View(roomSeat);
         }
 

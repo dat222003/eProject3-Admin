@@ -14,6 +14,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.Shop);
+            ViewBag.Position = "Products";
             return View(products.ToList());
         }
 
@@ -29,6 +30,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Products";
             return View(product);
         }
 
@@ -36,6 +38,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Create()
         {
             ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName");
+            ViewBag.Position = "Products";
             return View();
         }
 
@@ -50,10 +53,12 @@ namespace ABCD_Admin.Controllers
             {
                 db.Products.Add(product);
                 db.SaveChanges();
+                ViewBag.Position = "Products";
                 return RedirectToAction("Index");
             }
 
             ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName", product.shopId);
+            ViewBag.Position = "Products";
             return View(product);
         }
 
@@ -70,6 +75,7 @@ namespace ABCD_Admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName", product.shopId);
+            ViewBag.Position = "Products";
             return View(product);
         }
 
@@ -84,9 +90,11 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(product).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Products";
                 return RedirectToAction("Index");
             }
             ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName", product.shopId);
+            ViewBag.Position = "Products";
             return View(product);
         }
 
@@ -102,6 +110,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Products";
             return View(product);
         }
 
@@ -113,6 +122,7 @@ namespace ABCD_Admin.Controllers
             Product product = db.Products.Find(id);
             db.Products.Remove(product);
             db.SaveChanges();
+            ViewBag.Position = "Products";
             return RedirectToAction("Index");
         }
 

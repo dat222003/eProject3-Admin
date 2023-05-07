@@ -18,6 +18,7 @@ namespace ABCD_Admin.Controllers
         // GET: Shops
         public ActionResult Index()
         {
+            ViewBag.Position = "Shops";
             return View(db.Shops.ToList());
         }
 
@@ -33,12 +34,14 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Shops";
             return View(shop);
         }
 
         // GET: Shops/Create
         public ActionResult Create()
         {
+            ViewBag.Position = "Shops";
             return View();
         }
 
@@ -61,9 +64,10 @@ namespace ABCD_Admin.Controllers
 
                 db.Shops.Add(shop);
                 db.SaveChanges();
+                ViewBag.Position = "Shops";
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Position = "Shops";
             return View(shop);
         }
 
@@ -80,6 +84,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Shops";
             return View(shop);
         }
 
@@ -99,12 +104,12 @@ namespace ABCD_Admin.Controllers
                     imageFile.SaveAs(imagePath);
                     shop.imagePath = fileName;
                 }
-
+                ViewBag.Position = "Shops";
                 db.Entry(shop).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Position = "Shops";
             return View(shop);
         }
 
@@ -117,6 +122,7 @@ namespace ABCD_Admin.Controllers
             Shop shop = db.Shops.Find(id);
             db.Shops.Remove(shop);
             db.SaveChanges();
+            ViewBag.Position = "Shops";
             return RedirectToAction("Index");
         }
 
