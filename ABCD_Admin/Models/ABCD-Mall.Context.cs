@@ -39,7 +39,6 @@ namespace ABCD_Admin.Models
         public virtual DbSet<RoomSeat> RoomSeats { get; set; }
         public virtual DbSet<Screening> Screenings { get; set; }
         public virtual DbSet<Seat> Seats { get; set; }
-        public virtual DbSet<ShopImage> ShopImages { get; set; }
         public virtual DbSet<Shop> Shops { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
         public virtual DbSet<User> Users { get; set; }

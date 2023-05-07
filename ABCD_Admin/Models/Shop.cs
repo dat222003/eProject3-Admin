@@ -19,7 +19,6 @@ namespace ABCD_Admin.Models
         {
             this.Feedbacks = new HashSet<Feedback>();
             this.Products = new HashSet<Product>();
-            this.ShopImages = new HashSet<ShopImage>();
         }
     
         public int shopId { get; set; }
@@ -27,12 +26,11 @@ namespace ABCD_Admin.Models
         public string shopAddress { get; set; }
         public string phoneNumber { get; set; }
         public string email { get; set; }
+        public string imagePath { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ShopImage> ShopImages { get; set; }
     }
 }

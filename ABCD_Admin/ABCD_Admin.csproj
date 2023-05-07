@@ -137,6 +137,7 @@
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\RoomSeatsController.cs" />
     <Compile Include="Controllers\ScreeningsController.cs" />
+    <Compile Include="Controllers\ShopsController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -203,9 +204,6 @@
       <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Shop.cs">
-      <DependentUpon>ABCD-Mall.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ShopImage.cs">
       <DependentUpon>ABCD-Mall.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Ticket.cs">
@@ -906,9 +904,16 @@
     <Content Include="Views\Screenings\Details.cshtml" />
     <Content Include="Views\Screenings\Edit.cshtml" />
     <Content Include="Views\Screenings\Index.cshtml" />
+    <Content Include="Views\Shops\Create.cshtml" />
+    <Content Include="Views\Shops\Delete.cshtml" />
+    <Content Include="Views\Shops\Details.cshtml" />
+    <Content Include="Views\Shops\Edit.cshtml" />
+    <Content Include="Views\Shops\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="images\product\" />
+    <Folder Include="images\shop\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

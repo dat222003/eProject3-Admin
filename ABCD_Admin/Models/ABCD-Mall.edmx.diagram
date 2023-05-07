@@ -19,7 +19,6 @@
         <EntityTypeShape EntityType="Model.RoomSeat" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Screening" Width="1.5" PointX="0.75" PointY="22.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Seat" Width="1.5" PointX="1.5" PointY="20" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.ShopImage" Width="1.5" PointX="3" PointY="25.875" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Shop" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Ticket" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="13.25" PointY="8.25" IsExpanded="true" />
@@ -40,7 +39,6 @@
         <AssociationConnector Association="Model.FK__RoomSeats__seatI__6B24EA82" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Tickets__7E37BEF6" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Tickets__screeni__7D439ABD" ManuallyRouted="false" />
-        <AssociationConnector Association="Model.FK__ShopImage__shopI__59063A47" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__OrderDeta__ticke__04E4BC85" ManuallyRouted="false" />
         <AssociationConnector Association="Model.Carts" ManuallyRouted="false" />
         <AssociationConnector Association="Model.GroupFunctions" ManuallyRouted="false" />

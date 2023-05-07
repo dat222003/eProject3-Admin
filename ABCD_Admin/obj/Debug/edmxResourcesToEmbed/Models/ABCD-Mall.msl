@@ -143,18 +143,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="ShopImages">
-      <EntityTypeMapping TypeName="Model.ShopImage">
-        <MappingFragment StoreEntitySet="ShopImages">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="shopId" ColumnName="shopId" />
-          <ScalarProperty Name="imagePath" ColumnName="imagePath" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Shops">
       <EntityTypeMapping TypeName="Model.Shop">
         <MappingFragment StoreEntitySet="Shops">
+          <ScalarProperty Name="imagePath" ColumnName="imagePath" />
           <ScalarProperty Name="shopId" ColumnName="shopId" />
           <ScalarProperty Name="shopName" ColumnName="shopName" />
           <ScalarProperty Name="shopAddress" ColumnName="shopAddress" />

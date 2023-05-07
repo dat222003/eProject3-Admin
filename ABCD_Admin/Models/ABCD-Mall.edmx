@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Carts">
           <Key>
             <PropertyRef Name="customerId" />
@@ -161,14 +161,6 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           <Property Name="seatName" Type="varchar" MaxLength="3" Nullable="false" />
           <Property Name="isVipSeat" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="ShopImages">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="shopId" Type="int" Nullable="false" />
-          <Property Name="imagePath" Type="nvarchar" MaxLength="200" Nullable="false" />
-        </EntityType>
         <EntityType Name="Shops">
           <Key>
             <PropertyRef Name="shopId" />
@@ -178,6 +170,7 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           <Property Name="shopAddress" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="phoneNumber" Type="nvarchar" MaxLength="50" />
           <Property Name="email" Type="nvarchar" MaxLength="50" />
+          <Property Name="imagePath" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Tickets">
           <Key>
@@ -396,18 +389,6 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ShopImage__shopI__59063A47">
-          <End Role="Shops" Type="Self.Shops" Multiplicity="1" />
-          <End Role="ShopImages" Type="Self.ShopImages" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Shops">
-              <PropertyRef Name="shopId" />
-            </Principal>
-            <Dependent Role="ShopImages">
-              <PropertyRef Name="shopId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Tickets__7E37BEF6">
           <End Role="RoomSeats" Type="Self.RoomSeats" Multiplicity="1" />
           <End Role="Tickets" Type="Self.Tickets" Multiplicity="*" />
@@ -459,7 +440,9 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__UserFunct__userI__47DBAE45">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="UserFunctions" Type="Self.UserFunctions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -483,7 +466,9 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__UserGroup__userI__4BAC3F29">
-          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="UserGroups" Type="Self.UserGroups" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Users">
@@ -547,7 +532,6 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           <EntitySet Name="RoomSeats" EntityType="Self.RoomSeats" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Screening" EntityType="Self.Screening" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seats" EntityType="Self.Seats" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ShopImages" EntityType="Self.ShopImages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shops" EntityType="Self.Shops" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tickets" EntityType="Self.Tickets" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserFunctions" EntityType="Self.UserFunctions" Schema="dbo" store:Type="Tables" />
@@ -620,10 +604,6 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
             <End Role="Rooms" EntitySet="Rooms" />
             <End Role="Screening" EntitySet="Screening" />
           </AssociationSet>
-          <AssociationSet Name="FK__ShopImage__shopI__59063A47" Association="Self.FK__ShopImage__shopI__59063A47">
-            <End Role="Shops" EntitySet="Shops" />
-            <End Role="ShopImages" EntitySet="ShopImages" />
-          </AssociationSet>
           <AssociationSet Name="FK__Tickets__7E37BEF6" Association="Self.FK__Tickets__7E37BEF6">
             <End Role="RoomSeats" EntitySet="RoomSeats" />
             <End Role="Tickets" EntitySet="Tickets" />
@@ -665,8 +645,7 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
             <End Role="Carts" EntitySet="Carts" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -829,15 +808,6 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           <Property Name="isVipSeat" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="RoomSeats" Relationship="Self.FK__RoomSeats__seatI__6B24EA82" FromRole="Seats" ToRole="RoomSeats" />
         </EntityType>
-        <EntityType Name="ShopImage">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="shopId" Type="Int32" Nullable="false" />
-          <Property Name="imagePath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Shop" Relationship="Self.FK__ShopImage__shopI__59063A47" FromRole="ShopImages" ToRole="Shops" />
-        </EntityType>
         <EntityType Name="Shop">
           <Key>
             <PropertyRef Name="shopId" />
@@ -849,7 +819,7 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedbacks__shopI__52593CB8" FromRole="Shops" ToRole="Feedbacks" />
           <NavigationProperty Name="Products" Relationship="Self.FK__Products__shopId__5535A963" FromRole="Shops" ToRole="Products" />
-          <NavigationProperty Name="ShopImages" Relationship="Self.FK__ShopImage__shopI__59063A47" FromRole="Shops" ToRole="ShopImages" />
+          <Property Name="imagePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Ticket">
           <Key>
@@ -1085,18 +1055,6 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ShopImage__shopI__59063A47">
-          <End Role="Shops" Type="Self.Shop" Multiplicity="1" />
-          <End Role="ShopImages" Type="Self.ShopImage" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Shops">
-              <PropertyRef Name="shopId" />
-            </Principal>
-            <Dependent Role="ShopImages">
-              <PropertyRef Name="shopId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__OrderDeta__ticke__04E4BC85">
           <End Role="Tickets" Type="Self.Ticket" Multiplicity="1" />
           <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
@@ -1140,7 +1098,6 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           <EntitySet Name="RoomSeats" EntityType="Self.RoomSeat" />
           <EntitySet Name="Screenings" EntityType="Self.Screening" />
           <EntitySet Name="Seats" EntityType="Self.Seat" />
-          <EntitySet Name="ShopImages" EntityType="Self.ShopImage" />
           <EntitySet Name="Shops" EntityType="Self.Shop" />
           <EntitySet Name="Tickets" EntityType="Self.Ticket" />
           <EntitySet Name="Users" EntityType="Self.User" />
@@ -1208,10 +1165,6 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           <AssociationSet Name="FK__Tickets__screeni__7D439ABD" Association="Self.FK__Tickets__screeni__7D439ABD">
             <End Role="Screening" EntitySet="Screenings" />
             <End Role="Tickets" EntitySet="Tickets" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ShopImage__shopI__59063A47" Association="Self.FK__ShopImage__shopI__59063A47">
-            <End Role="Shops" EntitySet="Shops" />
-            <End Role="ShopImages" EntitySet="ShopImages" />
           </AssociationSet>
           <AssociationSet Name="FK__OrderDeta__ticke__04E4BC85" Association="Self.FK__OrderDeta__ticke__04E4BC85">
             <End Role="Tickets" EntitySet="Tickets" />
@@ -1382,18 +1335,10 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="ShopImages">
-            <EntityTypeMapping TypeName="Model.ShopImage">
-              <MappingFragment StoreEntitySet="ShopImages">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="shopId" ColumnName="shopId" />
-                <ScalarProperty Name="imagePath" ColumnName="imagePath" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Shops">
             <EntityTypeMapping TypeName="Model.Shop">
               <MappingFragment StoreEntitySet="Shops">
+                <ScalarProperty Name="imagePath" ColumnName="imagePath" />
                 <ScalarProperty Name="shopId" ColumnName="shopId" />
                 <ScalarProperty Name="shopName" ColumnName="shopName" />
                 <ScalarProperty Name="shopAddress" ColumnName="shopAddress" />

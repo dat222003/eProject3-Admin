@@ -159,15 +159,6 @@
     <Property Name="isVipSeat" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="RoomSeats" Relationship="Self.FK__RoomSeats__seatI__6B24EA82" FromRole="Seats" ToRole="RoomSeats" />
   </EntityType>
-  <EntityType Name="ShopImage">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="shopId" Type="Int32" Nullable="false" />
-    <Property Name="imagePath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Shop" Relationship="Self.FK__ShopImage__shopI__59063A47" FromRole="ShopImages" ToRole="Shops" />
-  </EntityType>
   <EntityType Name="Shop">
     <Key>
       <PropertyRef Name="shopId" />
@@ -179,7 +170,7 @@
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Feedbacks" Relationship="Self.FK__Feedbacks__shopI__52593CB8" FromRole="Shops" ToRole="Feedbacks" />
     <NavigationProperty Name="Products" Relationship="Self.FK__Products__shopId__5535A963" FromRole="Shops" ToRole="Products" />
-    <NavigationProperty Name="ShopImages" Relationship="Self.FK__ShopImage__shopI__59063A47" FromRole="Shops" ToRole="ShopImages" />
+    <Property Name="imagePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Ticket">
     <Key>
@@ -415,18 +406,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ShopImage__shopI__59063A47">
-    <End Role="Shops" Type="Self.Shop" Multiplicity="1" />
-    <End Role="ShopImages" Type="Self.ShopImage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Shops">
-        <PropertyRef Name="shopId" />
-      </Principal>
-      <Dependent Role="ShopImages">
-        <PropertyRef Name="shopId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__OrderDeta__ticke__04E4BC85">
     <End Role="Tickets" Type="Self.Ticket" Multiplicity="1" />
     <End Role="OrderDetails" Type="Self.OrderDetail" Multiplicity="*" />
@@ -470,7 +449,6 @@
     <EntitySet Name="RoomSeats" EntityType="Self.RoomSeat" />
     <EntitySet Name="Screenings" EntityType="Self.Screening" />
     <EntitySet Name="Seats" EntityType="Self.Seat" />
-    <EntitySet Name="ShopImages" EntityType="Self.ShopImage" />
     <EntitySet Name="Shops" EntityType="Self.Shop" />
     <EntitySet Name="Tickets" EntityType="Self.Ticket" />
     <EntitySet Name="Users" EntityType="Self.User" />
@@ -538,10 +516,6 @@
     <AssociationSet Name="FK__Tickets__screeni__7D439ABD" Association="Self.FK__Tickets__screeni__7D439ABD">
       <End Role="Screening" EntitySet="Screenings" />
       <End Role="Tickets" EntitySet="Tickets" />
-    </AssociationSet>
-    <AssociationSet Name="FK__ShopImage__shopI__59063A47" Association="Self.FK__ShopImage__shopI__59063A47">
-      <End Role="Shops" EntitySet="Shops" />
-      <End Role="ShopImages" EntitySet="ShopImages" />
     </AssociationSet>
     <AssociationSet Name="FK__OrderDeta__ticke__04E4BC85" Association="Self.FK__OrderDeta__ticke__04E4BC85">
       <End Role="Tickets" EntitySet="Tickets" />
