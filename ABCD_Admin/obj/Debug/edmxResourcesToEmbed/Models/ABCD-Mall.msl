@@ -54,6 +54,7 @@
     <EntitySetMapping Name="Movies">
       <EntityTypeMapping TypeName="Model.Movy">
         <MappingFragment StoreEntitySet="Movies">
+          <ScalarProperty Name="imagePath" ColumnName="imagePath" />
           <ScalarProperty Name="movieId" ColumnName="movieId" />
           <ScalarProperty Name="movieTitle" ColumnName="movieTitle" />
           <ScalarProperty Name="movieDescription" ColumnName="movieDescription" />

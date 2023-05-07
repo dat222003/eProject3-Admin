@@ -100,7 +100,7 @@ namespace ABCD_Admin.Controllers
                 if (imageFile != null && imageFile.ContentLength > 0)
                 {
                     var fileName = Path.GetFileName(imageFile.FileName);
-                    var imagePath = Path.Combine(Server.MapPath("~/Images/Shop"), fileName);
+                    var imagePath = Path.Combine(Server.MapPath("~/images/shop"), fileName);
                     imageFile.SaveAs(imagePath);
                     shop.imagePath = fileName;
                 }

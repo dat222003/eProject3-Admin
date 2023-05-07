@@ -26,7 +26,6 @@ namespace ABCD_Admin.Models
         [Required]
         public string userName { get; set; }
         [Required]
-        [DataType(DataType.Password)]
         public string password { get; set; }
         [Required]
         public int employeeId { get; set; }

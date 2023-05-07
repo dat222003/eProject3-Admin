@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -49,10 +47,18 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status")] Movy movy)
+        public ActionResult Create([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status")] Movy movy, HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(imageFile.FileName);
+                    var imagePath = Path.Combine(Server.MapPath("~/images/movie"), fileName);
+                    imageFile.SaveAs(imagePath);
+                    movy.imagePath = fileName;
+                }
+
                 db.Movies.Add(movy);
                 db.SaveChanges();
                 ViewBag.Position = "Movies";
@@ -83,10 +89,17 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status")] Movy movy)
+        public ActionResult Edit([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status")] Movy movy, HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(imageFile.FileName);
+                    var imagePath = Path.Combine(Server.MapPath("~/images/movie"), fileName);
+                    imageFile.SaveAs(imagePath);
+                    movy.imagePath = fileName;
+                }
                 db.Entry(movy).State = EntityState.Modified;
                 db.SaveChanges();
                 ViewBag.Position = "Movies";
