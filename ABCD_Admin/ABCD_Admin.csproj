@@ -129,10 +129,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FunctionsController.cs" />
+    <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\RoomsController.cs" />
     <Compile Include="Controllers\RoomSeatsController.cs" />
+    <Compile Include="Controllers\ScreeningsController.cs" />
     <Compile Include="Controllers\TicketsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -882,6 +886,26 @@
     <Content Include="Views\RoomSeats\Details.cshtml" />
     <Content Include="Views\RoomSeats\Edit.cshtml" />
     <Content Include="Views\RoomSeats\Index.cshtml" />
+    <Content Include="Views\Functions\Create.cshtml" />
+    <Content Include="Views\Functions\Delete.cshtml" />
+    <Content Include="Views\Functions\Details.cshtml" />
+    <Content Include="Views\Functions\Edit.cshtml" />
+    <Content Include="Views\Functions\Index.cshtml" />
+    <Content Include="Views\Groups\Create.cshtml" />
+    <Content Include="Views\Groups\Delete.cshtml" />
+    <Content Include="Views\Groups\Details.cshtml" />
+    <Content Include="Views\Groups\Edit.cshtml" />
+    <Content Include="Views\Groups\Index.cshtml" />
+    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Screenings\Create.cshtml" />
+    <Content Include="Views\Screenings\Delete.cshtml" />
+    <Content Include="Views\Screenings\Details.cshtml" />
+    <Content Include="Views\Screenings\Edit.cshtml" />
+    <Content Include="Views\Screenings\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

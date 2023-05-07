@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ABCD_Admin.Models.Screening>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.reservedTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movy.movieTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room.roomId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.reservedTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Movy.movieTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room.roomId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.screeningId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.screeningId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.screeningId })
+        </td>
+    </tr>
+}
+
+</table>

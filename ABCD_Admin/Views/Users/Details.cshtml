@@ -36,6 +36,46 @@
         </dd>
 
     </dl>
+
+    <h4>Functions:</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var function in ViewBag.Functions)
+            {
+                <tr>
+                    <td>@function.functionId</td>
+                    <td>@function.functionName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4>Groups:</h4>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var group in ViewBag.Groups)
+            {
+                <tr>
+                    <td>@group.groupId</td>
+                    <td>@group.groupName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.userId }) |
