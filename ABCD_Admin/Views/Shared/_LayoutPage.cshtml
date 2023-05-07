@@ -152,6 +152,11 @@
                             <a href="@Url.Action("Index", "Products")">
                                 <i class="fas fa-solid fa-list-ul"></i>Products
                             </a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="@Url.Action("Index", "ProductImages")">Product Images</a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li class="has-sub">
@@ -276,10 +281,18 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="@Url.Action("Index", "Products")">
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
                                 <i class="fas fa-solid fa-list-ul"></i>Products
                             </a>
+                                <ul class="list-unstyled navbar__sub-list js-sub-list">
+                                    <li>
+                                        <a href="@Url.Action("Index", "Products")">Product</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("Index", "ProductImages")">Product Images</a>
+                                    </li>
+                                </ul>
                         </li>
 
                         <li class="has-sub">

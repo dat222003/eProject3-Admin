@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ABCD_Admin.Models.Feedback>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.message)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.feedbackDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.userName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Shop.shopName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.message)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.feedbackDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.userName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Shop.shopName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
