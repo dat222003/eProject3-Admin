@@ -5,30 +5,43 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="title-1 m-b-25">Functions</h2>
+        <div class="table-responsive table--no-card m-b-40">
+            <table class="table table-borderless table-striped table-earning">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.functionName)
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.functionName)
+                            </td>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.functionName)
-        </th>
-        <th></th>
-    </tr>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.functionId })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.functionId })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Delete", "Delete", new { id = item.functionId })
+                            </td>
+                        </tr>
+                    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.functionName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.functionId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.functionId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.functionId })
-        </td>
-    </tr>
-}
-
-</table>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

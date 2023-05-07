@@ -5,51 +5,60 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="title-1 m-b-25">Tickets</h2>
+        <div class="table-responsive table--no-card m-b-40">
+            <table class="table table-borderless table-striped table-earning">
+                <thead>
 
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.seatName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TicketCode)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Movy.movieTitle)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RoomSeat.roomId)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Screening.reservedTime)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.seatName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TicketCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Movy.movieTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RoomSeat.roomId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Screening.reservedTime)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.seatName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TicketCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Movy.movieTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomSeat.roomId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Screening.reservedTime)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Details", new { id=item.ticketId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ticketId })
-        </td>
-    </tr>
-}
-
-</table>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.seatName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TicketCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Movy.movieTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RoomSeat.roomId)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Screening.reservedTime)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.ticketId }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.ticketId })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

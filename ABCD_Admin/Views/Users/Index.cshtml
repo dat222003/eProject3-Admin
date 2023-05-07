@@ -5,42 +5,55 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="title-1 m-b-25">Users</h2>
+        <div class="table-responsive table--no-card m-b-40">
+            <table class="table table-borderless table-striped table-earning">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.userName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.password)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Employee.email)
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.userName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Employee.email)
-        </th>
-        <th></th>
-    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.userName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.password)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee.email)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.userId })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.userId }) 
+                            </td>
+                            <td>
+                                @Html.ActionLink("Delete", "Delete", new { id = item.userId })
+                            </td>
+                        </tr>
+                    }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.userName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee.email)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.userId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.userId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.userId })
-        </td>
-    </tr>
-}
-
-</table>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

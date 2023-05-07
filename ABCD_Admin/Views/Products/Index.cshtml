@@ -4,49 +4,63 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
+<div class="row">
+    <div class="col-lg-12">
+        <h2 class="title-1 m-b-25">Order</h2>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.productName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.productDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Shop.shopName)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.productName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.productDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Shop.shopName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.productId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.productId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.productId })
-        </td>
-    </tr>
-}
-
-</table>
+        <div class="table-responsive table--no-card m-b-40">
+            <table class="table table-borderless table-striped table-earning">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.productName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.productDescription)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.price)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Shop.shopName)
+                        </th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.productName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.productDescription)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Shop.shopName)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.productId })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.productId })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Delete", "Delete", new { id = item.productId })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
