@@ -17,6 +17,7 @@ namespace ABCD_Admin.Controllers
         // GET: Movies
         public ActionResult Index()
         {
+            ViewBag.Position = "Movies";
             return View(db.Movies.ToList());
         }
 
@@ -32,12 +33,14 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Movies";
             return View(movy);
         }
 
         // GET: Movies/Create
         public ActionResult Create()
         {
+            ViewBag.Position = "Movies";
             return View();
         }
 
@@ -52,9 +55,10 @@ namespace ABCD_Admin.Controllers
             {
                 db.Movies.Add(movy);
                 db.SaveChanges();
+                ViewBag.Position = "Movies";
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Position = "Movies";
             return View(movy);
         }
 
@@ -70,6 +74,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Movies";
             return View(movy);
         }
 
@@ -84,8 +89,10 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(movy).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Movies";
                 return RedirectToAction("Index");
             }
+            ViewBag.Position = "Movies";
             return View(movy);
         }
 
@@ -101,6 +108,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Movies";
             return View(movy);
         }
 
@@ -112,6 +120,7 @@ namespace ABCD_Admin.Controllers
             Movy movy = db.Movies.Find(id);
             db.Movies.Remove(movy);
             db.SaveChanges();
+            ViewBag.Position = "Movies";
             return RedirectToAction("Index");
         }
 

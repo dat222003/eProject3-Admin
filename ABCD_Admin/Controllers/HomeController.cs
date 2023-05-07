@@ -11,18 +11,21 @@ namespace ABCD_Admin.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            ViewBag.Position = "Dashboard";
             return View();
         }
 
         // GET: Home/Details/5
         public ActionResult Details(int id)
         {
+            ViewBag.Position = "Dashboard";
             return View();
         }
 
         // GET: Home/Create
         public ActionResult Create()
         {
+            ViewBag.Position = "Dashboard";
             return View();
         }
 
@@ -33,11 +36,12 @@ namespace ABCD_Admin.Controllers
             try
             {
                 // TODO: Add insert logic here
-
+                ViewBag.Position = "Dashboard";
                 return RedirectToAction("Index");
             }
             catch
             {
+                ViewBag.Position = "Dashboard";
                 return View();
             }
         }
@@ -45,6 +49,7 @@ namespace ABCD_Admin.Controllers
         // GET: Home/Edit/5
         public ActionResult Edit(int id)
         {
+            ViewBag.Position = "Dashboard";
             return View();
         }
 
@@ -55,11 +60,12 @@ namespace ABCD_Admin.Controllers
             try
             {
                 // TODO: Add update logic here
-
+                ViewBag.Position = "Dashboard";
                 return RedirectToAction("Index");
             }
             catch
             {
+                ViewBag.Position = "Dashboard";
                 return View();
             }
         }
@@ -67,6 +73,7 @@ namespace ABCD_Admin.Controllers
         // GET: Home/Delete/5
         public ActionResult Delete(int id)
         {
+            ViewBag.Position = "Dashboard";
             return View();
         }
 
@@ -77,11 +84,12 @@ namespace ABCD_Admin.Controllers
             try
             {
                 // TODO: Add delete logic here
-
+                ViewBag.Position = "Dashboard";
                 return RedirectToAction("Index");
             }
             catch
             {
+                ViewBag.Position = "Dashboard";
                 return View();
             }
         }

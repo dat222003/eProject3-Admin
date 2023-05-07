@@ -18,6 +18,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Index()
         {
             var screenings = db.Screenings.Include(s => s.Movy).Include(s => s.Room);
+            ViewBag.Position = "Screenings";
             return View(screenings.ToList());
         }
 
@@ -33,6 +34,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Screenings";
             return View(screening);
         }
 
@@ -41,6 +43,7 @@ namespace ABCD_Admin.Controllers
         {
             ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle");
             ViewBag.roomId = new SelectList(db.Rooms, "roomId", "roomId");
+            ViewBag.Position = "Screenings";
             return View();
         }
 
@@ -55,11 +58,13 @@ namespace ABCD_Admin.Controllers
             {
                 db.Screenings.Add(screening);
                 db.SaveChanges();
+                ViewBag.Position = "Screenings";
                 return RedirectToAction("Index");
             }
 
             ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle", screening.movieId);
             ViewBag.roomId = new SelectList(db.Rooms, "roomId", "roomId", screening.roomId);
+            ViewBag.Position = "Screenings";
             return View(screening);
         }
 
@@ -77,6 +82,7 @@ namespace ABCD_Admin.Controllers
             }
             ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle", screening.movieId);
             ViewBag.roomId = new SelectList(db.Rooms, "roomId", "roomId", screening.roomId);
+            ViewBag.Position = "Screenings";
             return View(screening);
         }
 
@@ -91,10 +97,12 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(screening).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Screenings";
                 return RedirectToAction("Index");
             }
             ViewBag.movieId = new SelectList(db.Movies, "movieId", "movieTitle", screening.movieId);
             ViewBag.roomId = new SelectList(db.Rooms, "roomId", "roomId", screening.roomId);
+            ViewBag.Position = "Screenings";
             return View(screening);
         }
 
@@ -110,6 +118,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Screenings";
             return View(screening);
         }
 
@@ -121,6 +130,7 @@ namespace ABCD_Admin.Controllers
             Screening screening = db.Screenings.Find(id);
             db.Screenings.Remove(screening);
             db.SaveChanges();
+            ViewBag.Position = "Screenings";
             return RedirectToAction("Index");
         }
 

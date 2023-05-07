@@ -17,6 +17,7 @@ namespace ABCD_Admin.Controllers
         // GET: Rooms
         public ActionResult Index()
         {
+            ViewBag.Position = "Rooms";
             return View(db.Rooms.ToList());
         }
 
@@ -40,6 +41,7 @@ namespace ABCD_Admin.Controllers
 
             // Pass the RoomSeats list to the view using ViewBag
             ViewBag.RoomSeats = roomSeats;
+            ViewBag.Position = "Rooms";
 
             return View(room);
         }
@@ -58,6 +60,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Rooms";
 
             return View(room);
         }
@@ -74,8 +77,10 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(room).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Rooms";
                 return RedirectToAction("Index");
             }
+            ViewBag.Position = "Rooms";
             return View(room);
         }
 
@@ -91,6 +96,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Rooms";
             return View(room);
         }
 
@@ -102,6 +108,7 @@ namespace ABCD_Admin.Controllers
             Room room = db.Rooms.Find(id);
             db.Rooms.Remove(room);
             db.SaveChanges();
+            ViewBag.Position = "Rooms";
             return RedirectToAction("Index");
         }
 

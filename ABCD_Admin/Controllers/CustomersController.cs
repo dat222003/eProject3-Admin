@@ -32,12 +32,14 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Users";
             return View(customer);
         }
 
         // GET: Customers/Create
         public ActionResult Create()
         {
+            ViewBag.Position = "Users";
             return View();
         }
 
@@ -52,9 +54,10 @@ namespace ABCD_Admin.Controllers
             {
                 db.Customers.Add(customer);
                 db.SaveChanges();
+                ViewBag.Position = "Users";
                 return RedirectToAction("Index");
             }
-
+            ViewBag.Position = "Users";
             return View(customer);
         }
 
@@ -70,6 +73,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Users";
             return View(customer);
         }
 
@@ -84,8 +88,10 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(customer).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Users";
                 return RedirectToAction("Index");
             }
+            ViewBag.Position = "Users";
             return View(customer);
         }
 
@@ -101,6 +107,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Users";
             return View(customer);
         }
 
@@ -112,6 +119,7 @@ namespace ABCD_Admin.Controllers
             Customer customer = db.Customers.Find(id);
             db.Customers.Remove(customer);
             db.SaveChanges();
+            ViewBag.Position = "Users";
             return RedirectToAction("Index");
         }
 

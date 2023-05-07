@@ -64,7 +64,7 @@
             <nav class="navbar-mobile">
                 <div class="container-fluid">
                     <ul class="navbar-mobile__list list-unstyled">
-                        <li class="has-sub">
+                        <li class="@((ViewBag.Position == "Dashboard") ? "active has-sub" : "has-sub")">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard
                             </a>
@@ -76,32 +76,31 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub">
+                        <li class="@((ViewBag.Position == "Accounts") ? "active has-sub" : "has-sub")">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-regular fa-address-card"></i>Acounts
+                                <i class="fas fa-regular fa-address-card"></i>Accounts
                             </a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
+                                <li class="@((ViewBag.Position == "Users") ? "active" : "")">
                                     <a href="@Url.Action("Index", "Users")">
                                         <i class="fas fa-solid fa-address-book"></i>Users
                                     </a>
-                                </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Groups") ? "active" : "")">
                                     <a href="@Url.Action("Index", "Groups")">
                                         <i class="fas fa-solid fa-address-book"></i>Groups
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Functions") ? "active" : "")">
                                     <a href="@Url.Action("Index", "Functions")">
                                         <i class="fas fa-doutone fa-users"></i>Functions
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Customers") ? "active" : "")">
                                     <a href="@Url.Action("Index", "Customers")">
                                         <i class="fas fa-doutone fa-users"></i>Customers
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Employees") ? "active" : "")">
                                     <a href="@Url.Action("Index", "Employees")">
                                         <i class="fas fa-sharp fa-regular fa-users"></i>Employees
                                     </a>
@@ -112,28 +111,28 @@
 
 
 
-                        <li>
+                        <li class="@((ViewBag.Position == "Feedbacks") ? "active" : "")">
                             <a href="@Url.Action("Index", "Feedbacks")">
                                 <i class="fas fa-solid fa-envelope"></i>Feedbacks
                             </a>
                         </li>
 
-                        <li class="has-sub">
+                        <li class="@((ViewBag.Position == "Movies") ? "active has-sub" : "has-sub")">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-solid fa-film"></i>Movies
                             </a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
+                                <li class="@((ViewBag.Position == "Movies") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Movies")">
                                         <i class="fas fa-solid fa-film"></i>Movies
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Screenings") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Screenings")">
                                         <i class="fas fa-solid fa-tv"></i>Screenings
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Tickets") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Tickets")">
                                         <i class="fas fa-solid fa-ticket"></i>Tickets
                                     </a>
@@ -142,45 +141,33 @@
                         </li>
 
 
-                        <li>
+                        <li class="@((ViewBag.Position == "Orders") ? "active" : "")">
                             <a href="@Url.Action("Index", "Orders")">
                                 <i class="fas fa-solid fa-cart-shopping"></i>Orders
                             </a>
                         </li>
 
-                        <li>
+                        <li class="@((ViewBag.Position == "Products") ? "active has-sub" : "has-sub")">
                             <a href="@Url.Action("Index", "Products")">
                                 <i class="fas fa-solid fa-list-ul"></i>Products
                             </a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
+                                <li class="@((ViewBag.Position == "Products") ? "active " : "")">
+                                    <a href="@Url.Action("Index", "Products")">Products</a>
+                                </li>
+                                <li class="@((ViewBag.Position == "ProductImages") ? "active" : "")">
                                     <a href="@Url.Action("Index", "ProductImages")">Product Images</a>
                                 </li>
                             </ul>
                         </li>
 
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
+                        <li class="@((ViewBag.Position == "Rooms") ? "active" : "")">
+                            <a class="js-arrow" href="@Url.Action("Index", "Rooms")">
                                 <i class="fas fa-copy"></i>Rooms
                             </a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="@Url.Action("Index", "Rooms")">Room</a>
-                                </li>
-                                @*<li>
-                                    <a href="@Url.Action("Index", "RoomSeats")">
-                                        Room Seats
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="@Url.Action("Index", "Seats")">
-                                        Seats
-                                    </a>
-                                </li>*@
-                            </ul>
                         </li>
 
-                        <li>
+                        <li class="@((ViewBag.Position == "Shops") ? "active" : "")">
                             <a href="@Url.Action("Index", "Shops")">
                                 <i class="fas fa-solid fa-shop"></i>Shops
                             </a>
@@ -201,7 +188,7 @@
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
                     <ul class="list-unstyled navbar__list">
-                        <li class="active has-sub">
+                        <li class="@((ViewBag.Position == "Dashboard") ? "active" : "")">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard
                             </a>
@@ -212,32 +199,32 @@
                             </ul>
                         </li>
 
-                        <li class="has-sub">
+                        <li class="@((ViewBag.Position == "Accounts") ? "active has-sub" : "has-sub")">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-regular fa-address-card"></i>Acounts
+                                <i class="fas fa-regular fa-address-card"></i>Accounts
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
+                                <li class="@((ViewBag.Position == "Users") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Users")">
                                         <i class="fas fa-solid fa-address-book"></i>Users
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Groups") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Groups")">
                                         <i class="fas fa-solid fa-address-book"></i>Groups
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Functions") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Functions")">
                                         <i class="fas fa-doutone fa-users"></i>Functions
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Customers") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Customers")">
                                         <i class="fas fa-doutone fa-users"></i>Customers
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Employees") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Employees")">
                                         <i class="fas fa-sharp fa-regular fa-users"></i>Employees
                                     </a>
@@ -245,29 +232,29 @@
                             </ul>
                         </li>
 
-                        <li>
+                        <li class="@((ViewBag.Position == "Feedbacks") ? "active" : "")">
                             <a href="@Url.Action("Index", "Feedbacks")">
                                 <i class="fas fa-solid fa-envelope"></i>Feedbacks
                             </a>
                         </li>
 
 
-                        <li class="has-sub">
+                        <li class="@((ViewBag.Position == "Movies") ? "active has-sub" : "has-sub")">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-solid fa-film"></i>Movies
                             </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
+                                <li class="@((ViewBag.Position == "Movies") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Movies")">
                                         <i class="fas fa-solid fa-film"></i>Movies
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Screenings") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Screenings")">
                                         <i class="fas fa-solid fa-tv"></i>Screenings
                                     </a>
                                 </li>
-                                <li>
+                                <li class="@((ViewBag.Position == "Tickets") ? "active " : "")">
                                     <a href="@Url.Action("Index", "Tickets")">
                                         <i class="fas fa-solid fa-ticket"></i>Tickets
                                     </a>
@@ -275,48 +262,33 @@
                             </ul>
                         </li>
 
-                        <li>
+                        <li class="@((ViewBag.Position == "Orders") ? "active" : "")">
                             <a href="@Url.Action("Index", "Orders")">
                                 <i class="fas fa-solid fa-cart-shopping"></i>Orders
                             </a>
                         </li>
 
-                        <li class="has-sub">
+                        <li class="@((ViewBag.Position == "Products") ? "active" : "")">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-solid fa-list-ul"></i>Products
                             </a>
-                                <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                    <li>
-                                        <a href="@Url.Action("Index", "Products")">Product</a>
-                                    </li>
-                                    <li>
-                                        <a href="@Url.Action("Index", "ProductImages")">Product Images</a>
-                                    </li>
-                                </ul>
-                        </li>
-
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>Rooms
-                            </a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="@Url.Action("Index", "Rooms")">Rooms</a>
+                                <li class="@((ViewBag.Position == "Products") ? "active " : "")">
+                                    <a href="@Url.Action("Index", "Products")">Products</a>
                                 </li>
-                                @*<li>
-                                    <a href="@Url.Action("Index", "RoomSeats")">
-                                        Room Seats
-                                    </a>
+                                <li class="@((ViewBag.Position == "ProductImages") ? "active " : "")">
+                                    <a href="@Url.Action("Index", "ProductImages")">Product Images</a>
                                 </li>
-                                <li>
-                                    <a href="@Url.Action("Index", "Seats")">
-                                        Seats
-                                    </a>
-                                </li>*@
                             </ul>
                         </li>
 
-                        <li>
+                        <li class="@((ViewBag.Position == "Rooms") ? "active " : "")">
+                            <a class="js-arrow" href="@Url.Action("Index", "Rooms")">
+                                <i class="fas fa-desktop"></i>Rooms
+                            </a>
+                        </li>
+
+                        <li class="@((ViewBag.Position == "Shops") ? "active" : "")">
                             <a href="@Url.Action("Index", "Shops")">
                                 <i class="fas fa-solid fa-shop"></i>Shops
                             </a>

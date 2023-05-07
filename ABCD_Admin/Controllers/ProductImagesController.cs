@@ -22,7 +22,7 @@ namespace ABCD_Admin.Controllers
             {
                 productImages = productImages.Where(pi => pi.productId == id);
             }
-
+            ViewBag.Position = "ProductImages";
             return View(productImages.ToList());
         }
 
@@ -39,6 +39,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "ProductImages";
             return View(productImage);
         }
 
@@ -46,6 +47,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Create()
         {
             ViewBag.productId = new SelectList(db.Products, "productId", "productName");
+            ViewBag.Position = "ProductImages";
             return View();
         }
 
@@ -68,10 +70,12 @@ namespace ABCD_Admin.Controllers
 
                 db.ProductImages.Add(productImage);
                 db.SaveChanges();
+                ViewBag.Position = "ProductImages";
                 return RedirectToAction("Index");
             }
 
             ViewBag.productId = new SelectList(db.Products, "productId", "productName", productImage.productId);
+            ViewBag.Position = "ProductImages";
             return View(productImage);
         }
 
@@ -89,6 +93,7 @@ namespace ABCD_Admin.Controllers
                 return HttpNotFound();
             }
             ViewBag.productId = new SelectList(db.Products, "productId", "productName", productImage.productId);
+            ViewBag.Position = "ProductImages";
             return View(productImage);
         }
 
@@ -113,10 +118,12 @@ namespace ABCD_Admin.Controllers
                 // Update the product image in the database
                 db.Entry(model).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "ProductImages";
                 return RedirectToAction("Index");
             }
 
             ViewBag.productId = new SelectList(db.Products, "id", "name", model.productId);
+            ViewBag.Position = "ProductImages";
             return View(model);
         }
 
@@ -133,6 +140,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "ProductImages";
             return View(productImage);
         }
 
@@ -144,6 +152,7 @@ namespace ABCD_Admin.Controllers
             ProductImage productImage = db.ProductImages.Find(id);
             db.ProductImages.Remove(productImage);
             db.SaveChanges();
+            ViewBag.Position = "ProductImages";
             return RedirectToAction("Index");
         }
 

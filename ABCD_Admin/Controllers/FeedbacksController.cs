@@ -18,6 +18,7 @@ namespace ABCD_Admin.Controllers
         public ActionResult Index()
         {
             var feedbacks = db.Feedbacks.Include(f => f.Customer).Include(f => f.Shop);
+            ViewBag.Position = "Feedbacks";
             return View(feedbacks.ToList());
         }
 
@@ -33,6 +34,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Feedbacks";
             return View(feedback);
         }
 
@@ -41,6 +43,7 @@ namespace ABCD_Admin.Controllers
         {
             ViewBag.customerId = new SelectList(db.Customers, "customerId", "userName");
             ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName");
+            ViewBag.Position = "Feedbacks";
             return View();
         }
 
@@ -55,11 +58,13 @@ namespace ABCD_Admin.Controllers
             {
                 db.Feedbacks.Add(feedback);
                 db.SaveChanges();
+                ViewBag.Position = "Feedbacks";
                 return RedirectToAction("Index");
             }
 
             ViewBag.customerId = new SelectList(db.Customers, "customerId", "userName", feedback.customerId);
             ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName", feedback.shopId);
+            ViewBag.Position = "Feedbacks";
             return View(feedback);
         }
 
@@ -77,6 +82,7 @@ namespace ABCD_Admin.Controllers
             }
             ViewBag.customerId = new SelectList(db.Customers, "customerId", "userName", feedback.customerId);
             ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName", feedback.shopId);
+            ViewBag.Position = "Feedbacks";
             return View(feedback);
         }
 
@@ -91,10 +97,12 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(feedback).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Feedbacks";
                 return RedirectToAction("Index");
             }
             ViewBag.customerId = new SelectList(db.Customers, "customerId", "userName", feedback.customerId);
             ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName", feedback.shopId);
+            ViewBag.Position = "Feedbacks";
             return View(feedback);
         }
 
@@ -110,6 +118,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Feedbacks";
             return View(feedback);
         }
 
@@ -121,6 +130,7 @@ namespace ABCD_Admin.Controllers
             Feedback feedback = db.Feedbacks.Find(id);
             db.Feedbacks.Remove(feedback);
             db.SaveChanges();
+            ViewBag.Position = "Feedbacks";
             return RedirectToAction("Index");
         }
 

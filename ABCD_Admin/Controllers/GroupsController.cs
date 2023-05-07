@@ -17,6 +17,7 @@ namespace ABCD_Admin.Controllers
         // GET: Groups
         public ActionResult Index()
         {
+            ViewBag.Position = "Groups";
             return View(db.Groups.ToList());
         }
 
@@ -32,12 +33,14 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Groups";
             return View(group);
         }
 
         // GET: Groups/Create
         public ActionResult Create()
         {
+            ViewBag.Position = "Groups";
             return View();
         }
 
@@ -52,6 +55,7 @@ namespace ABCD_Admin.Controllers
             {
                 db.Groups.Add(group);
                 db.SaveChanges();
+                ViewBag.Position = "Groups";
                 return RedirectToAction("Index");
             }
 
@@ -70,6 +74,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Groups";
             return View(group);
         }
 
@@ -84,8 +89,10 @@ namespace ABCD_Admin.Controllers
             {
                 db.Entry(group).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Groups";
                 return RedirectToAction("Index");
             }
+            ViewBag.Position = "Groups";
             return View(group);
         }
 
@@ -101,6 +108,7 @@ namespace ABCD_Admin.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Position = "Groups";
             return View(group);
         }
 
@@ -112,6 +120,7 @@ namespace ABCD_Admin.Controllers
             Group group = db.Groups.Find(id);
             db.Groups.Remove(group);
             db.SaveChanges();
+            ViewBag.Position = "Groups";
             return RedirectToAction("Index");
         }
 
