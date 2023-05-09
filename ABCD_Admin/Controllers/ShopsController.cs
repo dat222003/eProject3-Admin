@@ -113,6 +113,23 @@ namespace ABCD_Admin.Controllers
             return View(shop);
         }
 
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Shop shop = db.Shops.Find(id);
+            if (shop == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.Position = "Shops";
+            return View(shop);
+        }
+
+
+
 
         // POST: Shops/Delete/5
         [HttpPost, ActionName("Delete")]

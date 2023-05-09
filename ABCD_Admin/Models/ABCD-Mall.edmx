@@ -77,6 +77,8 @@
           <Property Name="duration" Type="int" Nullable="false" />
           <Property Name="status" Type="tinyint" Nullable="false" />
           <Property Name="imagePath" Type="nvarchar" MaxLength="50" />
+          <Property Name="trailerLink" Type="nvarchar(max)" />
+          <Property Name="rating" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -719,6 +721,8 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           <NavigationProperty Name="Screenings" Relationship="Self.FK__Screening__movie__787EE5A0" FromRole="Movies" ToRole="Screening" />
           <NavigationProperty Name="Tickets" Relationship="Self.FK__Tickets__movieId__7C4F7684" FromRole="Movies" ToRole="Tickets" />
           <Property Name="imagePath" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="trailerLink" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="rating" Type="Int32" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -1248,6 +1252,8 @@ warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primar
           <EntitySetMapping Name="Movies">
             <EntityTypeMapping TypeName="Model.Movy">
               <MappingFragment StoreEntitySet="Movies">
+                <ScalarProperty Name="rating" ColumnName="rating" />
+                <ScalarProperty Name="trailerLink" ColumnName="trailerLink" />
                 <ScalarProperty Name="imagePath" ColumnName="imagePath" />
                 <ScalarProperty Name="movieId" ColumnName="movieId" />
                 <ScalarProperty Name="movieTitle" ColumnName="movieTitle" />

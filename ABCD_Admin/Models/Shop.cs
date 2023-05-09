@@ -11,8 +11,7 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Shop
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -24,12 +23,8 @@ namespace ABCD_Admin.Models
     
         public int shopId { get; set; }
         public string shopName { get; set; }
-        [Required]
         public string shopAddress { get; set; }
-        [Required]
         public string phoneNumber { get; set; }
-        [Required]
-        [DataType(DataType.EmailAddress)]
         public string email { get; set; }
         public string imagePath { get; set; }
     

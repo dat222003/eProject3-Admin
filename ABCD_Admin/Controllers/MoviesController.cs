@@ -47,7 +47,7 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status")] Movy movy, HttpPostedFileBase imageFile)
+        public ActionResult Create([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status,rating,trailerLink")] Movy movy, HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status")] Movy movy, HttpPostedFileBase imageFile)
+        public ActionResult Edit([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status,rating,trailerLink")] Movy movy, HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
