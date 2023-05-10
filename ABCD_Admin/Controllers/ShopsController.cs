@@ -97,21 +97,52 @@ namespace ABCD_Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Check if a new image file is uploaded
                 if (imageFile != null && imageFile.ContentLength > 0)
                 {
+                    // Delete the old shop image from the "images/shop" folder
+                    var oldImagePath = Server.MapPath("~/images/shop/") + shop.imagePath;
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+
+                    // Save the uploaded image to the "images/shop" folder
                     var fileName = Path.GetFileName(imageFile.FileName);
-                    var imagePath = Path.Combine(Server.MapPath("~/Images/Shop"), fileName);
-                    imageFile.SaveAs(imagePath);
+                    var path = Path.Combine(Server.MapPath("~/images/shop"), fileName);
+                    imageFile.SaveAs(path);
                     shop.imagePath = fileName;
+
                 }
-                ViewBag.Position = "Shops";
+
+                // Update the shop in the database
                 db.Entry(shop).State = EntityState.Modified;
                 db.SaveChanges();
+                ViewBag.Position = "Shops";
                 return RedirectToAction("Index");
+            }
+
+            ViewBag.Position = "Shops";
+            return View(shop);
+        }
+
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Shop shop = db.Shops.Find(id);
+            if (shop == null)
+            {
+                return HttpNotFound();
             }
             ViewBag.Position = "Shops";
             return View(shop);
         }
+
+
 
 
         // POST: Shops/Delete/5

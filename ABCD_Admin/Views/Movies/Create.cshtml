@@ -7,10 +7,10 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm("Create", "Movies", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    
+
 <div class="form-horizontal">
     <h4>Movy</h4>
     <hr />
@@ -39,7 +39,6 @@
         </div>
     </div>
 
-
     <div class="form-group">
         @Html.LabelFor(model => model.duration, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
@@ -51,8 +50,34 @@
     <div class="form-group">
         @Html.LabelFor(model => model.status, htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-10">
+            (1 or 0)
             @Html.EditorFor(model => model.status, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.status, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.rating, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.rating, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.rating, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.trailerLink, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.trailerLink, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.trailerLink, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.Label("Image", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="file" name="imageFile" />
+            @Html.ValidationMessageFor(model => model.imagePath, "", new { @class = "text-danger" })
         </div>
     </div>
 

@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -49,10 +47,18 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status")] Movy movy)
+        public ActionResult Create([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status,rating,trailerLink")] Movy movy, HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(imageFile.FileName);
+                    var imagePath = Path.Combine(Server.MapPath("~/images/movie"), fileName);
+                    imageFile.SaveAs(imagePath);
+                    movy.imagePath = fileName;
+                }
+
                 db.Movies.Add(movy);
                 db.SaveChanges();
                 ViewBag.Position = "Movies";
@@ -83,18 +89,39 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status")] Movy movy)
+        public ActionResult Edit([Bind(Include = "movieId,movieTitle,movieDescription,releaseDate,duration,status,rating,trailerLink,imagePath")] Movy movy, HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
+                // Check if a new image file is uploaded
+                if (imageFile != null && imageFile.ContentLength > 0)
+                {
+                    // Delete the old movie image from the "images/movie" folder
+                    var oldImagePath = Server.MapPath("~/images/movie/") + movy.imagePath;
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+
+                    // Save the uploaded image to the "images/movie" folder
+                    var fileName = Path.GetFileName(imageFile.FileName);
+                    var path = Path.Combine(Server.MapPath("~/images/movie"), fileName);
+                    imageFile.SaveAs(path);
+                    movy.imagePath = fileName;
+
+                }
+
+                // Update the movie in the database
                 db.Entry(movy).State = EntityState.Modified;
                 db.SaveChanges();
                 ViewBag.Position = "Movies";
                 return RedirectToAction("Index");
             }
+
             ViewBag.Position = "Movies";
             return View(movy);
         }
+
 
         // GET: Movies/Delete/5
         public ActionResult Delete(int? id)

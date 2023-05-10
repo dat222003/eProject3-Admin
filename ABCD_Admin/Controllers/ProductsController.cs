@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using ABCD_Admin.Models;
 
@@ -47,20 +49,31 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "productId,productName,productDescription,price,shopId")] Product product)
+        public ActionResult Edit([Bind(Include = "shopId,shopName,shopAddress,phoneNumber,email,imagePath")] Shop shop, HttpPostedFileBase imageFile)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
+                if (imageFile != null && imageFile.ContentLength > 0)
+                {
+                    var fileName = Path.GetFileName(imageFile.FileName);
+                    var imagePath = Path.Combine(Server.MapPath("~/images/shop"), fileName);
+                    imageFile.SaveAs(imagePath);
+                    shop.imagePath = fileName;
+                }
+                else
+                {
+                    var originalShop = db.Shops.Find(shop.shopId);
+                    shop.imagePath = originalShop.imagePath;
+                }
+                ViewBag.Position = "Shops";
+                db.Entry(shop).State = EntityState.Modified;
                 db.SaveChanges();
-                ViewBag.Position = "Products";
                 return RedirectToAction("Index");
             }
-
-            ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName", product.shopId);
-            ViewBag.Position = "Products";
-            return View(product);
+            ViewBag.Position = "Shops";
+            return View(shop);
         }
+
 
         // GET: Products/Edit/5
         public ActionResult Edit(int? id)

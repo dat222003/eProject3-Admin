@@ -71,6 +71,9 @@
     <Property Name="releaseDate" Type="datetime" Nullable="false" />
     <Property Name="duration" Type="int" Nullable="false" />
     <Property Name="status" Type="tinyint" Nullable="false" />
+    <Property Name="imagePath" Type="nvarchar" MaxLength="50" />
+    <Property Name="trailerLink" Type="nvarchar(max)" />
+    <Property Name="rating" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'ABCD-Mall.dbo.OrderDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->

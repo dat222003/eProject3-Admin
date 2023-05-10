@@ -51,7 +51,30 @@
             @Html.DisplayFor(model => model.status)
         </dd>
 
-        
+        <dt>
+            @Html.DisplayNameFor(model => model.rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.trailerLink)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trailerLink)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagePath)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/images/movie/" + Model.imagePath)" alt="Movie Image" />
+        </dd>
+
     </dl>
 </div>
 <p>

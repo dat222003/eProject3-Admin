@@ -106,13 +106,22 @@ namespace ABCD_Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Save the uploaded image to the "images/product" folder
+                // Check if a new image file is uploaded
                 if (imageFile != null && imageFile.ContentLength > 0)
                 {
+                    // Delete the old product image from the "images/product" folder
+                    var oldImagePath = Server.MapPath("~/images/product/") + model.imagePath;
+                    if (System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+
+                    // Save the uploaded image to the "images/product" folder
                     var fileName = Path.GetFileName(imageFile.FileName);
                     var path = Path.Combine(Server.MapPath("~/images/product"), fileName);
                     imageFile.SaveAs(path);
                     model.imagePath = fileName;
+
                 }
 
                 // Update the product image in the database
@@ -126,6 +135,7 @@ namespace ABCD_Admin.Controllers
             ViewBag.Position = "ProductImages";
             return View(model);
         }
+
 
 
         // GET: ProductImages/Delete/5

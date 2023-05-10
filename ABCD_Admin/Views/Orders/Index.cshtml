@@ -46,10 +46,10 @@
                                 @Html.DisplayFor(modelItem => item.totalPrice)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.isConfirm)
+                                @Html.CheckBoxFor(modelItem => item.isConfirm)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.isPurchased)
+                                @Html.CheckBoxFor(modelItem => item.isPurchased)
                             </td>
                             <td>
                                 @Html.DisplayFor(modelItem => item.bookingDate)
@@ -64,8 +64,12 @@
                                 @Html.DisplayFor(modelItem => item.PaymentMethod.paymentName)
                             </td>
                             <td>
-                                @Html.ActionLink("Edit", "Edit", new { id = item.orderId }) |
-                                @Html.ActionLink("Details", "Details", new { id = item.orderId }) |
+                                @Html.ActionLink("Edit", "Edit", new { id = item.orderId })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Details", "Details", new { id = item.orderId })
+                            </td>
+                            <td>
                                 @Html.ActionLink("Delete", "Delete", new { id = item.orderId })
                             </td>
                         </tr>

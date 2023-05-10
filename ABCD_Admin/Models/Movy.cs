@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Movy
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,11 +23,23 @@ namespace ABCD_Admin.Models
         }
     
         public int movieId { get; set; }
+        [Required]
         public string movieTitle { get; set; }
+        [Required]
         public string movieDescription { get; set; }
+        [Required]
         public System.DateTime releaseDate { get; set; }
+        [Required]
         public int duration { get; set; }
+        [Required]
+        [Range(0, 1)]
         public byte status { get; set; }
+        public string imagePath { get; set; }
+        [Required]
+        public string trailerLink { get; set; }
+        [Required]
+        [Range(0, 5)]
+        public Nullable<int> rating { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Screening> Screenings { get; set; }
