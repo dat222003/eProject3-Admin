@@ -14,14 +14,14 @@
         <EntityTypeShape EntityType="Model.Order" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.PaymentMethod" Width="1.5" PointX="3.75" PointY="12.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.ProductImage" Width="1.5" PointX="5.25" PointY="23" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="3" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Product" Width="1.5" PointX="3" PointY="23.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Room" Width="1.5" PointX="1.5" PointY="17.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.RoomSeat" Width="1.5" PointX="0.75" PointY="13.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Screening" Width="1.5" PointX="0.75" PointY="22.5" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Seat" Width="1.5" PointX="1.5" PointY="20" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Shop" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Ticket" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="13.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.User" Width="1.5" PointX="7.25" PointY="9.25" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.OrderDetail" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
         <AssociationConnector Association="Model.FK__Feedbacks__custo__5165187F" ManuallyRouted="false" />
         <AssociationConnector Association="Model.FK__Orders__customer__6FE99F9F" ManuallyRouted="false" />
