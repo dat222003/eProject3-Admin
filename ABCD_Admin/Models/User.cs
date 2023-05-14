@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,10 +21,14 @@ namespace ABCD_Admin.Models
             this.Functions = new HashSet<Function>();
             this.Groups = new HashSet<Group>();
         }
-    
+
+        [DisplayName("User")]
         public int userId { get; set; }
+        [DisplayName("UserName")]
         public string userName { get; set; }
+        [DisplayName("Password")]
         public string password { get; set; }
+        [DisplayName("Employee")]
         public int employeeId { get; set; }
     
         public virtual Employee Employee { get; set; }

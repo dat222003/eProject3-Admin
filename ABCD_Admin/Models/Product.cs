@@ -21,14 +21,17 @@ namespace ABCD_Admin.Models
         {
             this.ProductImages = new HashSet<ProductImage>();
         }
-    
+
+        [DisplayName("Product")]
         public int productId { get; set; }
         [DisplayName("Product Name")]
         public string productName { get; set; }
         [DisplayName("Product Description")]
         public string productDescription { get; set; }
         [DataType(DataType.Currency)]
+        [DisplayName("Price")]
         public decimal price { get; set; }
+        [DisplayName("Shop")]
         public int shopId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
