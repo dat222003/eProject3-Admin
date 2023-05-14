@@ -6,88 +6,164 @@
 }
 
 
+<!DOCTYPE html>
+<html lang="en">
 
-<div>
-    <h4>Order</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.totalPrice)
-        </dt>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="keywords" content="au theme template">
 
-        <dd>
-            @Html.DisplayFor(model => model.totalPrice)
-        </dd>
+    <!-- Title Page-->
+    <title>Detail Orders</title>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.isConfirm)
-        </dt>
+    <!-- Fontfaces CSS-->
+    <link href="~/css/font-face.css" rel="stylesheet" media="all">
+    <link href="~/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
-        <dd>
-            @Html.DisplayFor(model => model.isConfirm)
-        </dd>
+    <!-- Bootstrap CSS-->
+    <link href="~/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.isPurchased)
-        </dt>
+    <!-- Vendor CSS-->
+    <link href="~/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="~/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="~/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
-        <dd>
-            @Html.DisplayFor(model => model.isPurchased)
-        </dd>
+    <!-- Main CSS-->
+    <link href="~/css/theme.css" rel="stylesheet" media="all">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.bookingDate)
-        </dt>
+</head>
+<body class="animsition">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <h3>Orders</h3>
+            <div class="row">
+                <div class="col-sm-11">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Detail</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.totalPrice)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.bookingDate)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.totalPrice)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.isConfirm)
+                                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Customer.userName)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.isConfirm)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.isPurchased)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Customer.userName)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.isPurchased)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.bookingDate)
+                                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Employee.fullName)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.bookingDate)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Customer.userName)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Employee.fullName)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Customer.userName)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Employee.fullName)
+                                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.PaymentMethod.paymentName)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Employee.fullName)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.PaymentMethod.paymentName)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.PaymentMethod.paymentName)
-        </dd>
-    </dl>
-    <h5 style="background-color: #f2f2f2;">Order Details</h5>
-    <table style="border-collapse: collapse; width: 100%;">
-        <tr style="background-color: #f2f2f2; border: 1px solid #ddd;">
-            <th style="padding: 10px; text-align: left;">Ticket ID</th>
-            <th style="padding: 10px; text-align: left;">Ticket Price</th>
-            <th style="padding: 10px; text-align: left;">Details</th>
-        </tr>
-        @foreach (var od in ViewBag.OrderDetails)
-        {
-            <tr style="border: 1px solid #ddd;">
-                <td style="padding: 10px;">@od.ticketId</td>
-                <td style="padding: 10px;">@od.ticketPrice</td>
-                <td style="padding: 10px;">
-                    @Html.ActionLink("Details", "Details", "Tickets", new { id = @od.ticketId }, null)
-                </td>
-            </tr>
-        }
-    </table>
+                                <dd>
+                                    @Html.DisplayFor(model => model.PaymentMethod.paymentName)
+                                </dd>
+                            </div>
 
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.orderId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                            <div class="form-group">
+                                <h3 style="background-color: #f2f2f2;">Order Details</h3>
+                                <table style="border-collapse: collapse; width: 100%;">
+                                    <tr style="background-color: #f2f2f2; border: 1px solid #ddd;">
+                                        <th style="padding: 10px; text-align: left;">Ticket ID</th>
+                                        <th style="padding: 10px; text-align: left;">Ticket Price</th>
+                                        <th style="padding: 10px; text-align: left;">Details</th>
+                                    </tr>
+                                    @foreach (var od in ViewBag.OrderDetails)
+                                    {
+                                        <tr style="border: 1px solid #ddd;">
+                                            <td style="padding: 10px;">@od.ticketId</td>
+                                            <td style="padding: 10px;">@od.ticketPrice</td>
+                                            <td style="padding: 10px;">
+                                                @Html.ActionLink("Details", "Details", "Tickets", new { id = @od.ticketId }, null)
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                            <div class="form-group">
+                                @Html.ActionLink("Edit", "Edit", new { id = Model.orderId }) |
+                                @Html.ActionLink("Back to List", "Index")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="~/vendor/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JS-->
+    <script src="~/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="~/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <!-- Vendor JS       -->
+    <script src="~/vendor/slick/slick.min.js"></script>
+    <script src="~/vendor/wow/wow.min.js"></script>
+    <script src="~/vendor/animsition/animsition.min.js"></script>
+    <script src="~/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+    <script src="~/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="~/vendor/counter-up/jquery.counterup.min.js"></script>
+    <script src="~/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="~/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="~/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="~/vendor/select2/select2.min.js"></script>
+
+</body>
+
+</html>
