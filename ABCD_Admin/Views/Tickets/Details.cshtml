@@ -5,63 +5,134 @@
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
 }
 
-<h2>Details</h2>
+<!DOCTYPE html>
+<html lang="en">
 
-<div>
-    <h4>Ticket</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.seatName)
-        </dt>
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+    <meta name="keywords" content="au theme template">
 
-        <dd>
-            @Html.DisplayFor(model => model.seatName)
-        </dd>
+    <!-- Title Page-->
+    <title>Detail Tickets</title>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TicketCode)
-        </dt>
+    <!-- Fontfaces CSS-->
+    <link href="~/css/font-face.css" rel="stylesheet" media="all">
+    <link href="~/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
 
-        <dd>
-            @Html.DisplayFor(model => model.TicketCode)
-        </dd>
+    <!-- Bootstrap CSS-->
+    <link href="~/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Movy.movieTitle)
-        </dt>
+    <!-- Vendor CSS-->
+    <link href="~/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="~/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="~/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="~/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
-        <dd>
-            @Html.DisplayFor(model => model.Movy.movieTitle)
-        </dd>
+    <!-- Main CSS-->
+    <link href="~/css/theme.css" rel="stylesheet" media="all">
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RoomSeat.roomId)
-        </dt>
+</head>
+<body class="animsition">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <h3>Tickets</h3>
+            <div class="row">
+                <div class="col-sm-11">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Detail</strong>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.seatName)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.RoomSeat.roomId)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.seatName)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.TicketCode)
+                                </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Screening.reservedTime)
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.TicketCode)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Movy.movieTitle)
+                                </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Screening.reservedTime)
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Movy.movieTitle)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.RoomSeat.roomId)
+                                </dt>
 
-        <dt>
-            Ticket Price
-        </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.RoomSeat.roomId)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Screening.reservedTime)
+                                </dt>
 
-        <dd>
-            @ViewBag.TicketPrice
-        </dd>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Screening.reservedTime)
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                <dt>
+                                    Ticket Price
+                                </dt>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ticketId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                                <dd>
+                                    @ViewBag.TicketPrice
+                                </dd>
+                            </div>
+                            <div class="form-group">
+                                @Html.ActionLink("Edit", "Edit", new { id = Model.ticketId }) |
+                                @Html.ActionLink("Back to List", "Index")
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Jquery JS-->
+        <script src="~/vendor/jquery-3.2.1.min.js"></script>
+        <!-- Bootstrap JS-->
+        <script src="~/vendor/bootstrap-4.1/popper.min.js"></script>
+        <script src="~/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+        <!-- Vendor JS       -->
+        <script src="~/vendor/slick/slick.min.js"></script>
+        <script src="~/vendor/wow/wow.min.js"></script>
+        <script src="~/vendor/animsition/animsition.min.js"></script>
+        <script src="~/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <script src="~/vendor/counter-up/jquery.waypoints.min.js"></script>
+        <script src="~/vendor/counter-up/jquery.counterup.min.js"></script>
+        <script src="~/vendor/circle-progress/circle-progress.min.js"></script>
+        <script src="~/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+        <script src="~/vendor/chartjs/Chart.bundle.min.js"></script>
+        <script src="~/vendor/select2/select2.min.js"></script>
+
+</body>
+
+</html>
+
