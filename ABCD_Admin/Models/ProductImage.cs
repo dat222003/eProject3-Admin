@@ -11,11 +11,15 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class ProductImage
     {
+        [DisplayName("ID")]
         public int id { get; set; }
+        [DisplayName("Product")]
         public int productId { get; set; }
+        [DisplayName("ImagePath")]
         public string imagePath { get; set; }
     
         public virtual Product Product { get; set; }

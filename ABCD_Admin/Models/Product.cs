@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +20,16 @@ namespace ABCD_Admin.Models
         {
             this.ProductImages = new HashSet<ProductImage>();
         }
-    
+
+        [DisplayName("Product")]
         public int productId { get; set; }
+        [DisplayName("Product Name")]
         public string productName { get; set; }
+        [DisplayName("Product Description")]
         public string productDescription { get; set; }
+        [DisplayName("Price")]
         public decimal price { get; set; }
+        [DisplayName("Shop")]
         public int shopId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

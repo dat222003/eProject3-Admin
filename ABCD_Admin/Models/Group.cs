@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Group
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,8 +21,10 @@ namespace ABCD_Admin.Models
             this.Functions = new HashSet<Function>();
             this.Users = new HashSet<User>();
         }
-    
+
+        [DisplayName("Group")]
         public int groupId { get; set; }
+        [DisplayName("Group Name")]
         public string groupName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -11,15 +11,21 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Feedback
     {
+        [DisplayName("ID")]
         public int id { get; set; }
+        [DisplayName("Customer")]
         public int customerId { get; set; }
+        [DisplayName("Shop")]
         public int shopId { get; set; }
+        [DisplayName("Message")]
         public string message { get; set; }
+        [DisplayName("Feedback Date")]
         public System.DateTime feedbackDate { get; set; }
-    
+
         public virtual Customer Customer { get; set; }
         public virtual Shop Shop { get; set; }
     }

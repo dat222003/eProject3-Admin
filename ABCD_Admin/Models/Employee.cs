@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Employee
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,10 +21,14 @@ namespace ABCD_Admin.Models
             this.Orders = new HashSet<Order>();
             this.Users = new HashSet<User>();
         }
-    
+
+        [DisplayName("Employee")]
         public int employeeId { get; set; }
+        [DisplayName("Email")]
         public string email { get; set; }
+        [DisplayName("FullName")]
         public string fullName { get; set; }
+        [DisplayName("BirthDate")]
         public System.DateTime birthDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

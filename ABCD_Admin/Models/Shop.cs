@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Shop
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,12 +21,18 @@ namespace ABCD_Admin.Models
             this.Feedbacks = new HashSet<Feedback>();
             this.Products = new HashSet<Product>();
         }
-    
+
+        [DisplayName("Shop")]
         public int shopId { get; set; }
+        [DisplayName("Shop Name")]
         public string shopName { get; set; }
+        [DisplayName("Shop Address")]
         public string shopAddress { get; set; }
+        [DisplayName("Phone Number")]
         public string phoneNumber { get; set; }
+        [DisplayName("Email")]
         public string email { get; set; }
+        [DisplayName("Image Path")]
         public string imagePath { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

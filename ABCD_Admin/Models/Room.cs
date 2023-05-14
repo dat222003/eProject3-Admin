@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Room
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,9 +21,12 @@ namespace ABCD_Admin.Models
             this.RoomSeats = new HashSet<RoomSeat>();
             this.Screenings = new HashSet<Screening>();
         }
-    
+
+        [DisplayName("Room")]
         public int roomId { get; set; }
+        [DisplayName("Number Of Seat")]
         public int numberOfSeats { get; set; }
+        [DisplayName("Is Available")]
         public bool isAvailable { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

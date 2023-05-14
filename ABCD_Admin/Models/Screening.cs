@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Screening
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +20,16 @@ namespace ABCD_Admin.Models
         {
             this.Tickets = new HashSet<Ticket>();
         }
-    
+
+        [DisplayName("Screening")]
         public int screeningId { get; set; }
+        [DisplayName("Movie")]
         public int movieId { get; set; }
+        [DisplayName("Room")]
         public int roomId { get; set; }
+        [DisplayName("Reserved Time")]
         public System.DateTime reservedTime { get; set; }
+        [DisplayName("Price")]
         public int price { get; set; }
     
         public virtual Movy Movy { get; set; }

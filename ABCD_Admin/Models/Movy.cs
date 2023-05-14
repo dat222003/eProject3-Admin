@@ -11,7 +11,8 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Movy
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,17 +21,26 @@ namespace ABCD_Admin.Models
             this.Screenings = new HashSet<Screening>();
             this.Tickets = new HashSet<Ticket>();
         }
-    
+
+        [DisplayName("Movie")]
         public int movieId { get; set; }
+        [DisplayName("Movie Title")]
         public string movieTitle { get; set; }
+        [DisplayName("Description")]
         public string movieDescription { get; set; }
+        [DisplayName("Release Date")]
         public System.DateTime releaseDate { get; set; }
+        [DisplayName("Duration")]
         public int duration { get; set; }
+        [DisplayName("Status")]
         public byte status { get; set; }
+        [DisplayName("Image Path")]
         public string imagePath { get; set; }
+        [DisplayName("Trailer Link")]
         public string trailerLink { get; set; }
+        [DisplayName("Rating")]
         public Nullable<int> rating { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Screening> Screenings { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
