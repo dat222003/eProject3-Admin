@@ -1,5 +1,6 @@
-﻿@model IEnumerable<ABCD_Admin.Models.ProductImage>
-
+﻿@model IPagedList<ABCD_Admin.Models.ProductImage>
+@using PagedList;
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutPage.cshtml";
@@ -57,10 +58,10 @@
                     <thead>
                         <tr>
                             <th>
-                                @Html.DisplayNameFor(model => model.imagePath)
+                                Image
                             </th>
                             <th>
-                                @Html.DisplayNameFor(model => model.Product.productName)
+                                Product Name
                             </th>
                             <th></th>
                         </tr>
@@ -84,6 +85,24 @@
                         }
                     </tbody>
                 </table>
+                <div class="page-center mt-4">
+                    @Html.PagedListPager(Model, i => Url.Action("Index", "ProductImages", new { i }))
+                </div>
+                <style>
+                    .pagination {
+                        display: flex;
+                        justify-content: center;
+                    }
+
+                    .pagination li {
+                        margin: 0 5px;
+                    }
+
+                    .pagination li.active a {
+                        background-color: #007bff;
+                        color: #fff;
+                    }
+                </style>
             </div>
         </div>
     </div>
@@ -106,6 +125,7 @@
     <script src="~/vendor/select2/select2.min.js"></script>
 
 </body>
+
 
 </html>
 

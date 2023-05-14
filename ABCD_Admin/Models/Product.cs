@@ -11,7 +11,9 @@ namespace ABCD_Admin.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +23,11 @@ namespace ABCD_Admin.Models
         }
     
         public int productId { get; set; }
+        [DisplayName("Product Name")]
         public string productName { get; set; }
+        [DisplayName("Product Description")]
         public string productDescription { get; set; }
+        [DataType(DataType.Currency)]
         public decimal price { get; set; }
         public int shopId { get; set; }
     

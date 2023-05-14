@@ -52,63 +52,77 @@
                         </div>
                         <div class="card-body">
                             <div class="form-group">
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.movieTitle)
-                                </dt>
+                                <dl class="dl-horizontal">
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.movieTitle)
+                                    </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.movieTitle)
-                                </dd>
-                            </div>
-                            <div class="form-group">
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.movieDescription)
-                                </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.movieTitle)
+                                    </dd>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.movieDescription)
-                                </dd>
-                            </div>
-                            <div class="form-group">
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.releaseDate)
-                                </dt>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.movieDescription)
+                                    </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.releaseDate)
-                                </dd>
-                            </div>
-                            <div class="form-group">
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.duration)
-                                </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.movieDescription)
+                                    </dd>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.duration)
-                                </dd>
-                            </div>
-                            <div class="form-group">
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.status)
-                                </dt>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.releaseDate)
+                                    </dt>
 
-                                <dd>
-                                    @Html.DisplayFor(model => model.status)
-                                </dd>
-                            </div>
-                            <div class="form-group">
-                                <dt>
-                                    @Html.DisplayNameFor(model => model.imagePath)
-                                </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => model.releaseDate)
+                                    </dd>
 
-                                <dd>
-                                    <img src="@Url.Content("~/images/movie/" + Model.imagePath)" alt="Movie Image" />
-                                </dd>
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.duration)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.duration)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.status)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.status)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.rating)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.rating)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.trailerLink)
+                                    </dt>
+
+                                    <dd>
+                                        @Html.DisplayFor(model => model.trailerLink)
+                                    </dd>
+
+                                    <dt>
+                                        @Html.DisplayNameFor(model => model.imagePath)
+                                    </dt>
+
+                                    <dd>
+                                        <img src="@Url.Content("~/images/movie/" + Model.imagePath)" alt="Movie Image" />
+                                    </dd>
+
+                                </dl>
                             </div>
-                            <div class="form-group">
+                            <p>
                                 @Html.ActionLink("Edit", "Edit", new { id = Model.movieId }) |
                                 @Html.ActionLink("Back to List", "Index")
-                            </div>
+                            </p>
                         </div>
                     </div>
                 </div>

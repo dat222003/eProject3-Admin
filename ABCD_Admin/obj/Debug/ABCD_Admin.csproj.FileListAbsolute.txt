@@ -662,3 +662,7 @@ D:\DoAnKy3\Source\eProject3-Admin1\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CoreCo
 D:\DoAnKy3\Source\eProject3-Admin1\ABCD_Admin\obj\Debug\ABCD_Admin.csproj.CopyComplete
 D:\DoAnKy3\Source\eProject3-Admin1\ABCD_Admin\obj\Debug\ABCD_Admin.dll
 D:\DoAnKy3\Source\eProject3-Admin1\ABCD_Admin\obj\Debug\ABCD_Admin.pdb
+C:\Users\Admin\Desktop\eProject3\eProject3-Admin\ABCD_Admin\bin\PagedList.dll
+C:\Users\Admin\Desktop\eProject3\eProject3-Admin\ABCD_Admin\bin\PagedList.Mvc.dll
+C:\Users\Admin\Desktop\eProject3\eProject3-Admin\ABCD_Admin\bin\PagedList.xml
+C:\Users\Admin\Desktop\eProject3\eProject3-Admin\ABCD_Admin\bin\PagedList.Mvc.xml

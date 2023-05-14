@@ -39,7 +39,7 @@ namespace ABCD_Admin.Controllers
         // GET: Products/Create
         public ActionResult Create()
         {
-            ViewBag.shopId = new SelectList(db.Shops, "shopId", "shopName");
+            ViewBag.shops = new SelectList(db.Shops, "shopId", "shopName");
             ViewBag.Position = "Products";
             return View();
         }
@@ -49,7 +49,7 @@ namespace ABCD_Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "productId,productName,productDescription,price,shopId")] Product product)
+        public ActionResult Create([Bind(Include = "productName,productDescription,price,shopId")] Product product)
         {
             if (ModelState.IsValid)
             {

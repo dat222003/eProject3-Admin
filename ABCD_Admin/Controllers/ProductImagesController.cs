@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ABCD_Admin.Models;
+using PagedList;
 
 namespace ABCD_Admin.Controllers
 {
@@ -14,7 +15,7 @@ namespace ABCD_Admin.Controllers
         private Entities db = new Entities();
 
         // GET: ProductImages
-        public ActionResult Index(int? id)
+        public ActionResult Index(int? id,int? i)
         {
             var productImages = db.ProductImages.Include(p => p.Product);
 
@@ -23,7 +24,7 @@ namespace ABCD_Admin.Controllers
                 productImages = productImages.Where(pi => pi.productId == id);
             }
             ViewBag.Position = "ProductImages";
-            return View(productImages.ToList());
+            return View(productImages.ToList().ToPagedList(i ?? 1, 10));
         }
 
 
@@ -46,10 +47,22 @@ namespace ABCD_Admin.Controllers
         // GET: ProductImages/Create
         public ActionResult Create()
         {
-            ViewBag.productId = new SelectList(db.Products, "productId", "productName");
+            var shops = db.Shops.ToList();
+            ViewBag.shops = new SelectList(shops, "shopId", "shopName");
             ViewBag.Position = "ProductImages";
             return View();
         }
+
+        [HttpGet]
+        public JsonResult GetProductsByShop(int shopId)
+        {
+            var products = db.Products.Where(p => p.shopId == shopId).ToList();
+            var selectListItems = new SelectList(products, "productId", "productName");
+
+            return Json(selectListItems, JsonRequestBehavior.AllowGet);
+        }
+
+
 
         // POST: ProductImages/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
